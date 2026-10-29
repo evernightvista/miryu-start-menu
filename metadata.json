@@ -46,7 +46,7 @@
 		"Name[zh_CN]": "Miryu 开始菜单",
 		"Name[zh_TW]": "Miryu 開始功能表",
 		"Version": "45.0.1",
-		"Website": "https://github.com/evernightvista/miryu-start"
+		"Website": "https://github.com/evernightvista/miryu-start-menu"
 	},
 	"X-Plasma-API-Minimum-Version": "6.0",
 	"X-Plasma-Provides": [
