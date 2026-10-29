@@ -1,65 +1,46 @@
-/*
- * Miryu Start — https://github.com/evernightvista/miryu-start
- * Modified by naykkalak (2026) for Miryu Start, a fork of Menu 11 Next by Eisteed.
- * The original notice below is kept. This file is GPL-2.0-or-later;
- * Miryu Start as a whole is distributed under GPL-3.0-or-later.
- */
-/***************************************************************************
- *   Copyright (C) 2013-2014 by Eike Hein <hein@kde.org>                   *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- *   This program is distributed in the hope that it will be useful,       *
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
- *   GNU General Public License for more details.                          *
- *                                                                         *
- *   You should have received a copy of the GNU General Public License     *
- *   along with this program; if not, write to the                         *
- *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
- ***************************************************************************/
-import QtQuick 2.15
-import QtQuick.Layouts 1.1
-import org.kde.plasma.plasmoid
-import org.kde.plasma.core 2.0 as PlasmaCore
+/*****************************************************************************
+ *   Copyright (C) 2013-2014 by Eike Hein <hein@kde.org>                     *
+ *   Copyright (C) 2021 by Prateek SU <pankajsunal123@gmail.com>             *
+ *   Copyright (C) 2022 by Friedrich Schriewer <friedrich.schriewer@gmx.net> *
+ *                                                                           *
+ *   This program is free software; you can redistribute it and/or modify    *
+ *   it under the terms of the GNU General Public License as published by    *
+ *   the Free Software Foundation; either version 2 of the License, or       *
+ *   (at your option) any later version.                                     *
+ *                                                                           *
+ *   This program is distributed in the hope that it will be useful,         *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of          *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           *
+ *   GNU General Public License for more details.                            *
+ *                                                                           *
+ *   You should have received a copy of the GNU General Public License       *
+ *   along with this program; if not, write to the                           *
+ *   Free Software Foundation, Inc.,                                         *
+ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .          *
+ ****************************************************************************/
+
+pragma ComponentBehavior: Bound
+
+import QtQuick
 import org.kde.kirigami as Kirigami
 import org.kde.ksvg as KSvg
-import org.kde.taskmanager as TaskManager
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.plasmoid
 
 Item {
     id: root
-    readonly property var screenGeometry: plasmoid.screenGeometry
-    readonly property bool inPanel: (plasmoid.location == PlasmaCore.Types.TopEdge
-    || plasmoid.location == PlasmaCore.Types.RightEdge
-    || plasmoid.location == PlasmaCore.Types.BottomEdge
-    || plasmoid.location == PlasmaCore.Types.LeftEdge)
-    readonly property bool vertical: (plasmoid.formFactor == PlasmaCore.Types.Vertical)
-    readonly property bool useCustomButtonImage: (Plasmoid.configuration.useCustomButtonImage
-    && Plasmoid.configuration.customButtonImage.length != 0)
-    property QtObject dashWindow: null
-    // Fenestra : composant du menu gardé en référence pour la création paresseuse
-    property var menuComponent: null
 
-    // ── « Oreille » posée sur la barre (même principe que Panel Colorizer) ──
-    // Le bouton Démarrer est dessiné DANS la fenêtre de la barre : on remonte
-    // jusqu'à l'élément racine de cette fenêtre et on y pose une poignée
-    // PASSIVE, qui entend chaque clic sur la barre sans jamais l'intercepter.
-    // Un clic sur la barre (espace vide compris) ferme alors le menu ; le volet
-    // KDE Connect suit automatiquement. Le clic sur le bouton Démarrer lui-même
-    // est ignoré (il gère déjà l'ouverture/fermeture).
-    property QtObject panelEar: null
+    required property LauncherState launcher
 
-    // Fenestra : état « ouvert » du menu, sur le même principe que Plasma 6 pour
-    // un applet déployé (PlasmoidItem.expanded) : le shell dessine alors l'onglet
-    // actif du thème derrière le bouton tant que la vue reste ouverte.
-    readonly property bool menuOuvert: !!(dashWindow && dashWindow.visible)
+    readonly property bool useCustomButtonImage: Plasmoid.configuration.useCustomButtonImage
+                                                 && String(Plasmoid.configuration.customButtonImage).length > 0
 
-    // Marges du conteneur d'applet de la barre, pour faire descendre l'onglet
-    // actif jusqu'au bord de la barre, exactement comme CompactApplet.qml.
+    readonly property bool vertical: Plasmoid.formFactor === PlasmaCore.Types.Vertical
+
+    // Margins of the applet container that wraps this button inside the panel.
+    // The Plasma 6 active-tab must extend past these margins right up to the
+    // panel edge (like a real tab), otherwise the highlight looks like a small
+    // box inside the button instead of the native expanded-applet tab.
     readonly property var containerMargins: {
         let item = root;
         while (item.parent) {
@@ -70,184 +51,25 @@ Item {
         return undefined;
     }
 
-    function barRoot() {
-        var p = root;
-        while (p.parent) p = p.parent;
-        return p;
-    }
+    Plasmoid.status: root.launcher.menuOpen ? PlasmaCore.Types.RequiresAttentionStatus : PlasmaCore.Types.PassiveStatus
 
-    // remise à zéro de l'oreille : si le relâchement d'un clic s'est perdu
-    // (une fenêtre s'est fermée pendant l'appui), elle resterait « appuyée »
-    // et n'entendrait plus rien -> mêmes symptômes que la barre de recherche.
-    function resetEar() {
-        if (!panelEar) return;
-        panelEar.enabled = false;
-        panelEar.enabled = true;
-    }
+    Plasmoid.onActivated: root.launcher.toggle()
 
-    // ── Oreille PARTAGÉE entre le menu Démarrer et la capsule ──
-    // Deux PointHandler posés sur le même élément se volent le clic :
-    // celui qui le saisit prive l'autre, qui devient sourd. On n'en pose
-    // donc qu'UN SEUL sur la barre, repéré par son objectName, et chaque
-    // widget vient y brancher son écoute.
-    function oreillePartagee(top) {
-        var nom = "fenestraOreilleBarre";
-        for (var i = 0; i < top.data.length; i++) {
-            var o = top.data[i];
-            if (o && o.objectName === nom) return o;
-        }
-        return Qt.createQmlObject(
-            "import QtQuick\nPointHandler { objectName: \"fenestraOreilleBarre\"; acceptedButtons: Qt.LeftButton | Qt.RightButton }",
-            top, nom);
-    }
-
-    function ensureEar() {
-        var top = barRoot();
-        if (!top || top === root) return;              // pas encore dans la barre
-        if (panelEar && panelEar.parent === top) return; // déjà posée
-        panelEar = root.oreillePartagee(top);
-        if (!panelEar) return;                          // création de l'oreille échouée
-        panelEar.activeChanged.connect(function() {
-            if (!panelEar || !panelEar.active) return;          // seulement à l'appui
-            Qt.callLater(root.resetEar);                       // repart propre pour le clic suivant
-            if (!dashWindow || !dashWindow.visible) return;
-            var s = panelEar.point.scenePosition;
-            var l = root.mapFromItem(null, s.x, s.y);
-            if (l.x >= 0 && l.y >= 0 && l.x < root.width && l.y < root.height)
-                return;                                          // bouton Démarrer
-            dashWindow.visible = false;
-        });
-    }
-
-    Component.onDestruction: panelEar = null   // oreille partagée : on ne la détruit pas
-
-    // ── Fenêtre réduite ou fermée pendant que le menu est ouvert ──
-    // Plasma laisse le menu ouvert dans ce cas (même comportement avec Kickoff) ;
-    // Windows 11 le ferme. On surveille la liste des fenêtres (celle de la barre
-    // des tâches) : une fenêtre qui passe à « réduite » ou qui disparaît ferme le
-    // menu (le volet KDE Connect suit). Le menu et le volet n'y figurent pas.
-    property var etatReduit: ({})
-
-    function cleFenetre(row) {
-        var idx = fenetres.makeModelIndex(row);
-        return String(fenetres.data(idx, TaskManager.AbstractTasksModel.WinIdList));
-    }
-
-    function relever(fermerSiReduite) {
-        var nouveau = {};
-        var ferme = false;
-        for (var r = 0; r < fenetres.count; r++) {
-            var k = cleFenetre(r);
-            var red = fenetres.data(fenetres.makeModelIndex(r),
-                                    TaskManager.AbstractTasksModel.IsMinimized) === true;
-            nouveau[k] = red;
-            if (fermerSiReduite && red && etatReduit[k] === false) ferme = true;
-        }
-        etatReduit = nouveau;
-        if (ferme) fermerMenu();
-    }
-
-    function fermerMenu() {
-        if (dashWindow && dashWindow.visible) dashWindow.visible = false;
-    }
-
-    // ── Fenestra : création PARESSEUSE et SÛRE de la fenêtre du menu ──
-    // L'ancien code créait la fenêtre dans « Component.onCompleted » puis faisait
-    // « dashWindow.visible = !dashWindow.visible » sans garde dans les gestionnaires
-    // de clic : si la création échouait (ou si un clic arrivait avant la fin du
-    // chargement), « dashWindow » valait « null » et chaque clic levait
-    // « Cannot read property 'visible' of null » (CompactRepresentation.qml:170).
-    // La fenêtre est désormais créée à la demande, via le FICHIER (résolution de types
-    // fiable) plutôt que par une chaîne inline sans URL de base — cause probable du
-    // « null » : « Qt.createQmlObject(\"MenuRepresentation {}\") » pouvait ne pas
-    // résoudre le type local et renvoyer null. Tout accès reste gardé en plus.
-    function connectDashWindow() {
-        dashWindow.visibleChanged.connect(function() {
-            if (!dashWindow) return;
-            if (dashWindow.visible) {
-                root.ensureEar();
-                root.resetEar();        // oreille propre à chaque ouverture
-                root.relever(false);    // état de départ des fenêtres
-            }
-        });
-    }
-
-    function ensureDashWindow() {
-        if (dashWindow) return;
-
-        // 1) Chargement par FICHIER : résolution de type fiable, message d'erreur clair
-        if (!menuComponent)
-            menuComponent = Qt.createComponent("MenuRepresentation.qml");
-        if (menuComponent) {
-            if (menuComponent.status === Component.Ready) {
-                dashWindow = menuComponent.createObject(root);
-            } else if (menuComponent.status === Component.Loading) {
-                menuComponent.statusChanged.connect(function() {
-                    if (menuComponent.status === Component.Ready && !dashWindow) {
-                        dashWindow = menuComponent.createObject(root);
-                        if (dashWindow) root.connectDashWindow();
-                    }
-                });
-                return;
-            }
-        }
-
-        // 2) Repli : ancienne méthode inline (chaîne), si le fichier ne se résout pas
-        if (!dashWindow) {
-            try {
-                dashWindow = Qt.createQmlObject("MenuRepresentation {}", root);
-            } catch (e) {
-                console.warn("fenestra-menu11 : création du menu impossible :", e);
-                dashWindow = null;
-            }
-        }
-        if (!dashWindow) {
-            console.warn("fenestra-menu11 : MenuRepresentation indisponible",
-                         menuComponent ? menuComponent.errorString() : "");
-            return;
-        }
-        connectDashWindow();
-    }
-
-    function toggleDashWindow() {
-        ensureDashWindow();
-        if (!dashWindow) return;
-        dashWindow.visible = !dashWindow.visible;
-    }
-
-    TaskManager.TasksModel {
-        id: fenetres
-        groupMode: TaskManager.TasksModel.GroupDisabled
-        filterByVirtualDesktop: false
-        filterByScreen: false
-        filterByActivity: false
-
-        onDataChanged: root.relever(true)
-        onRowsInserted: root.relever(false)
-        onRowsRemoved: {
-            root.relever(false);
-            root.fermerMenu();          // une fenêtre a été fermée
-        }
-    }
-    Plasmoid.status: dashWindow && dashWindow.visible ? PlasmaCore.Types.RequiresAttentionStatus : PlasmaCore.Types.PassiveStatus
-
-    // Fenestra : surlignage « onglet actif » emprunté au thème Plasma 6.
-    // Le shell ne le dessine que derrière un applet déployé (PlasmoidItem.expanded,
-    // voir CompactApplet.qml) ; comme le menu de Miryu Start est une fenêtre
-    // PlasmaCore.Dialog indépendante, l'applet n'est jamais « expanded » et rien
-    // n'était donc affiché une fois le bouton relâché. On rejoue ici exactement le
-    // même élément de thème (widgets/tabbar + <bord>-active-tab) tant que le menu
-    // est ouvert, avec la même transition que le shell.
+    // Plasma 6 active-tab highlight.
+    // Uses the same theme element (widgets/tabbar + <edge>-active-tab) as the
+    // Plasma shell draws behind expanded applets, so the open state follows the
+    // current Plasma 6 appearance. Always shown while the menu is open.
     KSvg.FrameSvgItem {
         id: activeTab
+
         z: -1
         imagePath: "widgets/tabbar"
 
         anchors {
             fill: parent
             property bool returnAllMargins: true
-            // L'onglet déborde du bouton jusqu'au bord de la barre, comme dans
-            // CompactApplet.qml (marges du conteneur d'applet).
+            // Extend the tab past the applet container margins so it reaches the
+            // panel edge — identical to CompactApplet.qml / miryu-start-main-rtm.
             bottomMargin: !root.vertical && root.containerMargins ? -root.containerMargins("bottom", returnAllMargins) : 0
             topMargin: !root.vertical && root.containerMargins ? -root.containerMargins("top", returnAllMargins) : 0
             leftMargin: root.vertical && root.containerMargins ? -root.containerMargins("left", returnAllMargins) : 0
@@ -274,21 +96,22 @@ Item {
             return prefix;
         }
 
-        opacity: root.menuOuvert ? 1 : 0
+        opacity: root.launcher.menuOpen ? 1 : 0
         visible: opacity > 0
+
         Behavior on opacity {
             NumberAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.InOutQuad }
         }
     }
 
-    // État actif de l'icône : survol, ou menu ouvert (l'éclat du thème reste
-    // allumé après le relâchement, comme le bouton Kickoff déployé).
     Kirigami.Icon {
         id: buttonIcon
+
         anchors.fill: parent
-        source: useCustomButtonImage ? Plasmoid.configuration.customButtonImage : Plasmoid.configuration.icon
-        active: buttonHover.hovered || root.menuOuvert
+        source: root.useCustomButtonImage ? Plasmoid.configuration.customButtonImage : Plasmoid.configuration.icon
+        active: buttonHover.hovered || root.launcher.menuOpen
         smooth: true
+
         scale: mouseArea.pressed ? 0.85 : 1.0
 
         Behavior on scale {
@@ -296,35 +119,33 @@ Item {
         }
     }
 
-    // Fenestra : HoverHandler plutôt que « hoverEnabled » sur la MouseArea — cette
-    // dernière intercepte les événements de survol, ce qui empêchait le shell
-    // d'afficher l'infobulle native du bouton (« Démarrer », cf. toolTipMainText
-    // dans main.qml). HoverHandler observe le survol sans intercepter l'événement.
+    // HoverHandler instead of hoverEnabled on the MouseArea: a hovering MouseArea
+    // consumes the hover event, which kept the shell from showing the native
+    // tooltip of the button ("Start", cf. toolTipMainText in main.qml). HoverHandler
+    // observes the hover without intercepting it.
     HoverHandler {
         id: buttonHover
     }
 
     MouseArea {
         id: mouseArea
+
         anchors.fill: parent
-        onClicked: {
-            root.toggleDashWindow();
-        }
+
+        onClicked: root.launcher.toggle()
     }
 
-    // Fenestra : infobulle « Démarrer » au survol du bouton, style Plasma d'origine —
-    // même composant que Animated-plasma-task (taskmanager-skyler/qml/Task.qml) :
-    // PlasmaCore.ToolTipArea affiche l'infobulle NATIVE du shell au-dessus du bouton.
-    // Elle n'intercepte ni les clics ni les événements de survol. Masquée pendant que
-    // le menu est ouvert.
+    // Native "Start" tooltip above the panel button, styled and positioned by
+    // Plasma itself (same component as miryu-start-main). It intercepts neither
+    // clicks nor hover events. Hidden while the menu is open.
     PlasmaCore.ToolTipArea {
         anchors.fill: parent
         mainText: i18n("Start")
-        active: !(root.dashWindow && root.dashWindow.visible)
+        active: !root.launcher.menuOpen
     }
 
-    Component.onCompleted: {
-        root.ensureDashWindow();          // création au démarrage (la barre est prête)
-        plasmoid.activated.connect(root.toggleDashWindow);
+    MenuRepresentation {
+        launcher: root.launcher
+        anchorItem: root
     }
 }

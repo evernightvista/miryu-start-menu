@@ -1,0 +1,514 @@
+# Translation of Miryu Start Menu in Finnish
+# Copyright (C) 2025
+# This file is distributed under the same license as the Miryu Start Menu package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: org.miryugaming.startmenu 45.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/AxiomOperator/XLauncher\n"
+"POT-Creation-Date: 2026-10-30 07:36+0800\n"
+"PO-Revision-Date: 2025-12-14 15:55+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Finnish <fi@li.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../metadata.json
+msgid "Miryu Start Menu"
+msgstr "Miryu-käynnistysvalikko"
+
+#: ../metadata.json
+msgid "One stop KDE Plasma 6 Start Menu"
+msgstr "Yhden luukun käynnistysvalikko KDE Plasma 6:lle"
+
+#: ../contents/code/tools.js
+msgid "Remove from Favorites"
+msgstr "Poista suosikeista"
+
+#: ../contents/code/tools.js ../contents/ui/MainView.qml
+msgid "Add to Favorites"
+msgstr "Lisää suosikkeihin"
+
+#: ../contents/code/tools.js
+msgid "On All Activities"
+msgstr "Kaikissa toiminnoissa"
+
+#: ../contents/code/tools.js
+msgid "On the Current Activity"
+msgstr "Nykyisessä toiminnassa"
+
+#: ../contents/code/tools.js
+msgid "Show in Favorites"
+msgstr "Näytä suosikeissa"
+
+#: ../contents/config/config.qml
+msgid "General"
+msgstr "Yleinen"
+
+#: ../contents/config/config.qml
+msgid "Lists and grids"
+msgstr "Luettelot ja ruudukot"
+
+#: ../contents/config/config.qml
+msgid "Search"
+msgstr "Haku"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Lock"
+msgstr "Lukitse"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Switch User"
+msgstr "Vaihda käyttäjää"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Log Out"
+msgstr "Kirjaudu ulos"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Sleep"
+msgstr "Lepotila"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Hibernate"
+msgstr "Horrostila"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Restart"
+msgstr "Käynnistä uudelleen"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Shut Down"
+msgstr "Sammuta"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Save Session"
+msgstr "Tallenna istunto"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Icon:"
+msgstr "Kuvake:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "Valitse…"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Clear Icon"
+msgstr "Tyhjennä kuvake"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Greeting:"
+msgstr "Tervehdys:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Enabled"
+msgstr "Käytössä"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Custom Greeting Text:"
+msgstr "Mukautettu tervehdysteksti:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "No custom greeting set"
+msgstr "Mukautettua tervehdystä ei ole asetettu"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Glow"
+msgstr "Hohto"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Glow color:"
+msgstr "Hohdon väri:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Purple (Default)"
+msgstr "Purppura (oletus)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Blue"
+msgstr "Sininen"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Red"
+msgstr "Punainen"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Custom"
+msgstr "Mukautettu"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Custom glow color:"
+msgstr "Mukautettu hehkutusväri:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Please choose a color"
+msgstr "Ole hyvä ja valitse väri"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Launcher Positioning:"
+msgstr "Käynnistimen sijoitus:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Follow Launcher Button (Default)"
+msgstr "Seuraa käynnistinpainiketta (oletus)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Horizontal Center"
+msgstr "Vaakasuora keskitus"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Screen Center"
+msgstr "Näytön keskellä"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Panel Edge"
+msgstr "Paneelin reuna"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Main page:"
+msgstr "Pääsivu:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Favorites (Default)"
+msgstr "Suosikit (oletus)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Recent Applications"
+msgstr "Viimeisimmät sovellukset"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+#: ../contents/ui/config/ConfigSearch.qml ../contents/ui/MainView.qml
+msgid "Recent Files"
+msgstr "Viimeisimmät tiedostot"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "All Applications (Default)"
+msgstr "Kaikki sovellukset (oletus)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Development"
+msgstr "Kehitys"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Games"
+msgstr "Pelit"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Graphics"
+msgstr "Grafiikka"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Internet"
+msgstr "Internet"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Multimedia"
+msgstr "Multimedia"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Office"
+msgstr "Toimisto"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Science & Math"
+msgstr "Tiede ja matematiikka"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Settings"
+msgstr "Asetukset"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "System"
+msgstr "Järjestelmä"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Utilities"
+msgstr "Apuohjelmat"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Lost & Found"
+msgstr "Kadonneet ja löydetyt"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Default Page:"
+msgstr "Oletussivu:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Power buttons:"
+msgstr "Virran painikkeet:"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Applications"
+msgstr "Sovellukset"
+
+#: ../contents/ui/config/ConfigSearch.qml ../contents/ui/Header.qml
+msgid "System Settings"
+msgstr "Järjestelmäasetukset"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "File Search"
+msgstr "Tiedostohaku"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Locations (paths and URLs)"
+msgstr "Sijainnit (polut ja URL-osoitteet)"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Places"
+msgstr "Paikat"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Calculator"
+msgstr "Laskin"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Unit Converter"
+msgstr "Yksikkömuunnin"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Date and Time"
+msgstr "Päivämäärä ja aika"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Command Line"
+msgstr "Komentorivi"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Desktop Sessions"
+msgstr "Työpöytäistunnot"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Power Management"
+msgstr "Virranhallinta"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Open Windows"
+msgstr "Avoimet ikkunat"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Bookmarks"
+msgstr "Kirjanmerkit"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Browser History"
+msgstr "Selaimen historia"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Web Search Keywords"
+msgstr "Verkkohaun avainsanat"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Special Characters"
+msgstr "Erikoismerkit"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Dictionary"
+msgstr "Sanakirja"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Spell Checker"
+msgstr "Oikeinkirjoituksen tarkistus"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Terminate Applications"
+msgstr "Lopeta sovellukset"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Software Center"
+msgstr "Ohjelmistokeskus"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Konsole Profiles"
+msgstr "Konsole-profiilit"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Search with:"
+msgstr "Hae komennolla:"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Only the plugins selected below"
+msgstr "Vain alla valitut liitännäiset"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Plugins that aren't installed are skipped."
+msgstr "Liitännäiset, joita ei ole asennettu, ohitetaan."
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Every plugin enabled in System Settings is used."
+msgstr "Käytetään kaikkia järjestelmäasetuksissa käytössä olevia liitännäisiä."
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "No plugins selected, so every enabled plugin will be used."
+msgstr "Liitännäisiä ei ole valittu, joten kaikkia käytössä olevia käytetään."
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Plugin settings:"
+msgstr "Liitännäisasetukset:"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Configure Search Plugins…"
+msgstr "Määritä hakuliitännäiset…"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Lists:"
+msgstr "Luettelot:"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Compact list items"
+msgstr "Tiiviit luettelokohteet"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "All applications view:"
+msgstr "Kaikkien sovellusten näkymä:"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "show items in grid"
+msgstr "näytä kohteet ruudukossa"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Show apps as:"
+msgstr "Näytä sovellukset muodossa:"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Name only"
+msgstr "Vain nimi"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Description only"
+msgstr "Vain kuvaus"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Name (Description)"
+msgstr "Nimi (kuvaus)"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Description (Name)"
+msgstr "Kuvaus (nimi)"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Mark newly installed apps"
+msgstr "Merkitse äskettäin asennetut sovellukset"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Grid icon size:"
+msgstr "Ruudukon kuvakekoko:"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Small"
+msgstr "Pieni"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Medium"
+msgstr "Keskikokoinen"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Large"
+msgstr "Suuri"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Huge"
+msgstr "Valtava"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Number of columns in grid"
+msgstr "Sarakkeiden määrä ruudukossa"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Number of rows in grid"
+msgstr "Rivien määrä ruudukossa"
+
+#: ../contents/ui/Greeting.qml
+msgid "Hi, %1"
+msgstr "Hei, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "Good morning, %1"
+msgstr "Hyvää huomenta, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "Good noon, %1"
+msgstr "Hyvää päivää, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "Good afternoon, %1"
+msgstr "Hyvää iltapäivää, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "Good evening, %1"
+msgstr "Hyvää iltaa, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "%1@%2"
+msgstr "%1@%2"
+
+#: ../contents/ui/Header.qml
+msgid "Leave"
+msgstr "Poistu"
+
+#: ../contents/ui/main.qml
+msgid "Edit Applications…"
+msgstr "Muokkaa sovelluksia…"
+
+#: ../contents/ui/main.qml ../contents/ui/CompactRepresentation.qml
+msgid "Start"
+msgstr "Käynnistä"
+
+#: ../contents/ui/MainView.qml
+msgid "Recent Apps"
+msgstr "Viimeisimmät sovellukset"
+
+#: ../contents/ui/MainView.qml
+msgid "Favorite Apps"
+msgstr "Suosikkisovellukset"
+
+#: ../contents/ui/MainView.qml
+msgid "Back"
+msgstr "Takaisin"
+
+#: ../contents/ui/MainView.qml
+msgid "All apps"
+msgstr "Kaikki sovellukset"
+
+#: ../contents/ui/NewAppBadge.qml
+msgctxt "@info:tooltip"
+msgid "Newly installed"
+msgstr "Äskettäin asennettu"
+
+#: ../contents/ui/RunnerList.qml
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "Ei vastineita"
+
+#: ../contents/ui/SearchBar.qml
+msgid "Search..."
+msgstr "Haku..."
+
+#~ msgid "Use system font settings"
+#~ msgstr "Käytä järjestelmän fonttiasetuksia"
+
+#~ msgid "Offset Screen Edge (0 is Default):"
+#~ msgstr "Siirto näytön reunasta (0 on oletus):"
+
+#~ msgid "Offset Panel (0 is Default):"
+#~ msgstr "Siirto paneelista (0 on oletus):"
+
+#~ msgid "Default"
+#~ msgstr "Oletus"
+
+#~ msgid "Floating"
+#~ msgstr "Kelluva"
+
+#~ msgid "Indicator:"
+#~ msgstr "Ilmaisin:"
+
+#~ msgid "Indicator Color:"
+#~ msgstr "Ilmaisimen väri:"
+
+#~ msgid "Pinned applications Page:"
+#~ msgstr "Kiinnitettyjen sovellusten sivu:"

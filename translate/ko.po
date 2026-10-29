@@ -1,826 +1,513 @@
-# Miryu Start — Korean translation
-# SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) 2026 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2026.
+# Translation of Miryu Start Menu in Korean
+# Copyright (C) 2026
+# This file is distributed under the same license as the Miryu Start Menu package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Miryu Start 1.0\n"
-"Report-Msgid-Bugs-To: https://github.com/miryugaming/miryu-start\n"
-"POT-Creation-Date: 2026-10-27 13:55+0800\n"
-"PO-Revision-Date: 2026-10-21 14:50+0800\n"
-"Last-Translator: Miryu Start Team\n"
-"Language-Team: Korean\n"
+"Project-Id-Version: org.miryugaming.startmenu 45.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/AxiomOperator/XLauncher\n"
+"POT-Creation-Date: 2026-10-30 07:36+0800\n"
+"PO-Revision-Date: 2026-10-29 00:00+0900\n"
+"Last-Translator: Miryu <miryu@example.com>\n"
+"Language-Team: Korean <>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: contents/config/config.qml:32 contents/ui/ConfigGeneral.qml:52
+#: ../metadata.json
+msgid "Miryu Start Menu"
+msgstr "Miryu 시작 메뉴"
+
+#: ../metadata.json
+msgid "One stop KDE Plasma 6 Start Menu"
+msgstr "KDE Plasma 6용 올인원 시작 메뉴"
+
+#: ../contents/code/tools.js
+msgid "Remove from Favorites"
+msgstr "즐겨찾기에서 제거"
+
+#: ../contents/code/tools.js ../contents/ui/MainView.qml
+msgid "Add to Favorites"
+msgstr "즐겨찾기에 추가"
+
+#: ../contents/code/tools.js
+msgid "On All Activities"
+msgstr "모든 활동에서"
+
+#: ../contents/code/tools.js
+msgid "On the Current Activity"
+msgstr "현재 활동에서"
+
+#: ../contents/code/tools.js
+msgid "Show in Favorites"
+msgstr "즐겨찾기에 표시"
+
+#: ../contents/config/config.qml
 msgid "General"
 msgstr "일반"
 
-#: contents/ui/CompactRepresentation.qml:322 contents/ui/main.qml:73
-msgid "Start"
-msgstr "시작"
+#: ../contents/config/config.qml
+msgid "Lists and grids"
+msgstr "목록 및 그리드"
 
-#: contents/ui/ConfigGeneral.qml:81
+#: ../contents/config/config.qml
+msgid "Search"
+msgstr "검색"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Lock"
+msgstr "잠금"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Switch User"
+msgstr "사용자 전환"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Log Out"
+msgstr "로그아웃"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Sleep"
+msgstr "절전"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Hibernate"
+msgstr "최대 절전"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Restart"
+msgstr "다시 시작"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Shut Down"
+msgstr "시스템 종료"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Save Session"
+msgstr "세션 저장"
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Icon:"
 msgstr "아이콘:"
 
-#: contents/ui/ConfigGeneral.qml:161
+#: ../contents/ui/config/ConfigGeneral.qml
 msgctxt "@item:inmenu Open icon chooser dialog"
 msgid "Choose…"
 msgstr "선택…"
 
-#: contents/ui/ConfigGeneral.qml:166
+#: ../contents/ui/config/ConfigGeneral.qml
 msgctxt "@item:inmenu Reset icon to default"
 msgid "Clear Icon"
 msgstr "아이콘 지우기"
 
-#: contents/ui/ConfigGeneral.qml:182
-msgid "Apps icon size:"
-msgstr "앱 아이콘 크기:"
-
-#: contents/ui/ConfigGeneral.qml:184 contents/ui/ConfigGeneral.qml:191
-msgid "Small"
-msgstr "작게"
-
-#: contents/ui/ConfigGeneral.qml:184 contents/ui/ConfigGeneral.qml:191
-msgid "Medium"
-msgstr "중간"
-
-#: contents/ui/ConfigGeneral.qml:184 contents/ui/ConfigGeneral.qml:191
-msgid "Large"
-msgstr "크게"
-
-#: contents/ui/ConfigGeneral.qml:184 contents/ui/ConfigGeneral.qml:191
-msgid "Huge"
-msgstr "매우 크게"
-
-#: contents/ui/ConfigGeneral.qml:189
-msgid "Docs icon size:"
-msgstr "문서 아이콘 크기:"
-
-#: contents/ui/ConfigGeneral.qml:197
-msgid "Show labels in two lines"
-msgstr "레이블을 두 줄로 표시"
-
-#: contents/ui/ConfigGeneral.qml:207
-msgid "Number of columns"
-msgstr "열 수"
-
-#: contents/ui/ConfigGeneral.qml:215
-msgid "Number of rows"
-msgstr "행 수"
-
-#: contents/ui/ConfigGeneral.qml:220
-msgid "All Apps"
-msgstr "모든 앱"
-
-#: contents/ui/ConfigGeneral.qml:225
-msgid "Recent Documents:"
-msgstr "최근 문서:"
-
-#: contents/ui/ConfigGeneral.qml:226
-msgid "Show Recent Documents section"
-msgstr "최근 문서 섹션 표시"
-
-#: contents/ui/ConfigGeneral.qml:232 contents/ui/MenuRepresentation.qml:2373
-msgid "KDE Connect"
-msgstr "KDE Connect"
-
-#: contents/ui/ConfigGeneral.qml:237
-msgid "Mobile panel:"
-msgstr "모바일 패널:"
-
-#: contents/ui/ConfigGeneral.qml:238
-msgid "Keep the mobile panel open between menu openings"
-msgstr "메뉴를 열 때마다 모바일 패널을 열어 둡니다"
-
-#: contents/ui/ConfigGeneral.qml:243
-msgid "Show KDE Connect button next to search"
-msgstr "검색 옆에 KDE Connect 버튼 표시"
-
-#: contents/ui/ConfigGeneral.qml:248 contents/ui/KdeConnectPanel.qml:1178
-msgid "Search"
-msgstr "검색"
-
-#: contents/ui/ConfigGeneral.qml:253
-msgid "Home page:"
-msgstr "홈 페이지:"
-
-#: contents/ui/ConfigGeneral.qml:254
-msgid "Show recently opened apps"
-msgstr "최근 열었던 앱 표시"
-
-#: contents/ui/ConfigGeneral.qml:259
-msgid "Enable shell command runner ( > cmd )"
-msgstr "셸 명령 실행기 사용 ( > 명령어 )"
-
-#: contents/ui/ConfigGeneral.qml:264
-msgid "Show Quick Actions bar (Screenshot, Lock, Terminal…)"
-msgstr "빠른 작업 표시줄 표시 (스크린샷, 잠금, 터미널…)"
-
-#: contents/ui/ConfigGeneral.qml:269
-msgid "Footer power buttons"
-msgstr "푸터 전원 버튼"
-
-#: contents/ui/ConfigGeneral.qml:274
-msgid "Show:"
-msgstr "표시:"
-
-#: contents/ui/ConfigGeneral.qml:275
-msgid "Sleep / Suspend"
-msgstr "절전 / 일시 중단"
-
-#: contents/ui/ConfigGeneral.qml:280 contents/ui/Footer.qml:883
-msgid "Restart"
-msgstr "다시 시작"
-
-#: contents/ui/ConfigGeneral.qml:285
-msgid "Shutdown"
-msgstr "종료"
-
-#: contents/ui/ConfigGeneral.qml:292
-msgid "Unhide all hidden applications"
-msgstr "숨겨진 모든 응용 프로그램 표시하기"
-
-#: contents/ui/ConfigGeneral.qml:295
-msgid "Unhidden!"
-msgstr "표시되었습니다!"
-
-#: contents/ui/Footer.qml:336
-msgid "Sign out"
-msgstr "로그아웃"
-
-#: contents/ui/Footer.qml:434
-msgid "Other users"
-msgstr "다른 사용자"
-
-#: contents/ui/Footer.qml:532
-msgid "No other users"
-msgstr "다른 사용자 없음"
-
-#: contents/ui/Footer.qml:596
-msgid "Local account"
-msgstr "로컬 계정"
-
-#: contents/ui/Footer.qml:605
-msgid "Manage my account"
-msgstr "내 계정 관리"
-
-#: contents/ui/Footer.qml:690
-msgid "Power"
-msgstr "전원"
-
-#: contents/ui/Footer.qml:754
-msgid "Lock"
-msgstr "잠금"
-
-#: contents/ui/Footer.qml:797
-msgid "Sleep"
-msgstr "절전"
-
-#: contents/ui/Footer.qml:840
-msgid "Shut down"
-msgstr "컴퓨터 종료"
-
-#: contents/ui/ItemGridDelegate.qml:361
-msgid "New"
-msgstr "새로 만들기"
-
-#: contents/ui/ItemGridDelegateColumns.qml:288
-msgid "Unpin from Start"
-msgstr "시작에서 고정 해제"
-
-#: contents/ui/ItemGridDelegateColumns.qml:288
-msgid "Pin to Start"
-msgstr "시작에 고정"
-
-#: contents/ui/KdeConnectPanel.qml:234
-msgid "The phone is ringing…"
-msgstr "휴대폰이 울리고 있습니다…"
-
-#: contents/ui/KdeConnectPanel.qml:235
-msgid "Hello from the PC"
-msgstr "PC에서 보낸 인사"
-
-#: contents/ui/KdeConnectPanel.qml:235
-msgid "Ping sent"
-msgstr "핑 전송됨"
-
-#: contents/ui/KdeConnectPanel.qml:236
-msgid "Clipboard sent"
-msgstr "클립보드 전송됨"
-
-#: contents/ui/KdeConnectPanel.qml:244
-msgid "Opening the phone's files…"
-msgstr "휴대폰 파일 여는 중…"
-
-#: contents/ui/KdeConnectPanel.qml:254
-msgid "File sent"
-msgid_plural "%1 files sent"
-msgstr[0] "%1개 파일을 보냈습니다"
-
-#: contents/ui/KdeConnectPanel.qml:263
-msgid "Link sent: it opens on the phone"
-msgstr "링크 전송됨: 휴대폰에서 열립니다"
-
-#: contents/ui/KdeConnectPanel.qml:266
-msgid "Text sent"
-msgstr "텍스트 전송됨"
-
-#: contents/ui/KdeConnectPanel.qml:283
-msgid "Take the photo on the phone: it will open here."
-msgstr "휴대폰에서 사진을 찍으세요: 여기에 표시됩니다."
-
-#: contents/ui/KdeConnectPanel.qml:384
-msgid "Reply sent"
-msgstr "답장 전송됨"
-
-#: contents/ui/KdeConnectPanel.qml:457
-msgid "Choose a contact from the list or type a number"
-msgstr "목록에서 연락처를 선택하거나 번호를 입력하세요"
-
-#: contents/ui/KdeConnectPanel.qml:461
-msgid "Sending SMS…"
-msgstr "SMS 전송 중…"
-
-#: contents/ui/KdeConnectPanel.qml:1015
-msgid "Send to phone"
-msgstr "휴대폰으로 보내기"
-
-#: contents/ui/KdeConnectPanel.qml:1050
-msgid "✓ SMS handed over to the phone"
-msgstr "✓ SMS가 휴대폰으로 전달되었습니다"
-
-#: contents/ui/KdeConnectPanel.qml:1055
-msgid "✗ Failed: SMS not handed over to the phone"
-msgstr "✗ 실패: SMS가 휴대폰으로 전달되지 않았습니다"
-
-#: contents/ui/KdeConnectPanel.qml:1103
-msgid "Access your mobile device here"
-msgstr "여기서 모바일 기기에 접근하세요"
-
-#: contents/ui/KdeConnectPanel.qml:1113
-msgid "The qdbus tool was not found: unable to talk to KDE Connect."
-msgstr "qdbus 도구를 찾을 수 없습니다: KDE Connect와 통신할 수 없습니다."
-
-#: contents/ui/KdeConnectPanel.qml:1114
-msgid ""
-"See your phone's battery, files and notifications right in the Start menu, "
-"thanks to KDE Connect."
-msgstr ""
-"KDE Connect를 통해 시작 메뉴에서 휴대폰 배터리, 파일, 알림을 바로 확인하세요."
-
-#: contents/ui/KdeConnectPanel.qml:1120
-msgid "Select your device"
-msgstr "기기를 선택하세요"
-
-#: contents/ui/KdeConnectPanel.qml:1143
-msgid "Connect an iPhone"
-msgstr "iPhone 연결"
-
-#: contents/ui/KdeConnectPanel.qml:1143
-msgid "Connect an Android phone"
-msgstr "Android 휴대폰 연결"
-
-#: contents/ui/KdeConnectPanel.qml:1155
-msgid "1. Install the KDE Connect app from the App Store.\n"
-msgstr "1. App Store에서 KDE Connect 앱을 설치하세요.\n"
-
-#: contents/ui/KdeConnectPanel.qml:1156
-msgid "1. Install the KDE Connect app from the Play Store or F-Droid.\n"
-msgstr "1. Play Store 또는 F-Droid에서 KDE Connect 앱을 설치하세요.\n"
-
-#: contents/ui/KdeConnectPanel.qml:1157
-msgid ""
-"2. Connect the phone to the same Wi-Fi network as this PC (or connect this "
-"PC to the phone's hotspot).\n"
-msgstr ""
-"2. 휴대폰을 이 PC와 동일한 Wi-Fi 네트워크에 연결하거나, 이 PC를 휴대폰 핫스팟"
-"에 연결하세요.\n"
-
-#: contents/ui/KdeConnectPanel.qml:1158
-msgid "3. In the app, tap the name of this PC, then “Request pairing”.\n"
-msgstr "3. 앱에서 이 PC의 이름을 누른 다음 “페어링 요청”을 탭하세요.\n"
-
-#: contents/ui/KdeConnectPanel.qml:1159
-msgid "4. Accept the request that appears on this PC."
-msgstr "4. 이 PC에 표시된 요청을 수락하세요."
-
-#: contents/ui/KdeConnectPanel.qml:1165
-msgid "On iPhone, KDE Connect offers fewer features than on Android."
-msgstr "iPhone에서는 KDE Connect의 기능이 Android보다 적습니다."
-
-#: contents/ui/KdeConnectPanel.qml:1173
-msgid "Download"
-msgstr "다운로드"
-
-#: contents/ui/KdeConnectPanel.qml:1186
-msgid "< Back"
-msgstr "< 뒤로"
-
-#: contents/ui/KdeConnectPanel.qml:1258
-msgid "Connected"
-msgstr "연결됨"
-
-#: contents/ui/KdeConnectPanel.qml:1258
-msgid "Offline"
-msgstr "오프라인"
-
-#: contents/ui/KdeConnectPanel.qml:1319
-msgid "Refresh"
-msgstr "새로고침"
-
-#: contents/ui/KdeConnectPanel.qml:1339
-msgid "Ring"
-msgstr "벨소리 울리기"
-
-#: contents/ui/KdeConnectPanel.qml:1340
-msgid "Send files"
-msgstr "파일 보내기"
-
-#: contents/ui/KdeConnectPanel.qml:1341
-msgid "Browse"
-msgstr "찾아보기"
-
-#: contents/ui/KdeConnectPanel.qml:1342
-msgid "Clipboard"
-msgstr "클립보드"
-
-#: contents/ui/KdeConnectPanel.qml:1343
-msgid "Send a link"
-msgstr "링크 보내기"
-
-#: contents/ui/KdeConnectPanel.qml:1344
-msgid "Take a photo"
-msgstr "사진 촬영"
-
-#: contents/ui/KdeConnectPanel.qml:1345
-msgid "SMS"
-msgstr "SMS"
-
-#: contents/ui/KdeConnectPanel.qml:1346
-msgid "Ping"
-msgstr "핑"
-
-#: contents/ui/KdeConnectPanel.qml:1347 contents/ui/MenuRepresentation.qml:3164
-#: contents/ui/MenuRepresentation.qml:3612
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Greeting:"
+msgstr "인사말:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Enabled"
+msgstr "활성화됨"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Custom Greeting Text:"
+msgstr "사용자 지정 인사말 텍스트:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "No custom greeting set"
+msgstr "설정된 사용자 지정 인사말 없음"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Glow"
+msgstr "글로우"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Glow color:"
+msgstr "글로우 색상:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Purple (Default)"
+msgstr "보라색 (기본값)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Blue"
+msgstr "파란색"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Red"
+msgstr "빨간색"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Custom"
+msgstr "사용자 지정"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Custom glow color:"
+msgstr "사용자 지정 글로우 색상:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Please choose a color"
+msgstr "색상을 선택하세요"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Launcher Positioning:"
+msgstr "런처 위치:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Follow Launcher Button (Default)"
+msgstr "런처 버튼 따라가기 (기본값)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Horizontal Center"
+msgstr "가로 중앙"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Screen Center"
+msgstr "화면 중앙"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Panel Edge"
+msgstr "패널 가장자리"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Main page:"
+msgstr "메인 페이지:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Favorites (Default)"
+msgstr "즐겨찾기 (기본값)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Recent Applications"
+msgstr "최근 애플리케이션"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+#: ../contents/ui/config/ConfigSearch.qml ../contents/ui/MainView.qml
+msgid "Recent Files"
+msgstr "최근 파일"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "All Applications (Default)"
+msgstr "모든 애플리케이션 (기본값)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Development"
+msgstr "개발"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Games"
+msgstr "게임"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Graphics"
+msgstr "그래픽"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Internet"
+msgstr "인터넷"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Multimedia"
+msgstr "멀티미디어"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Office"
+msgstr "사무"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Science & Math"
+msgstr "과학 및 수학"
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Settings"
 msgstr "설정"
 
-#: contents/ui/KdeConnectPanel.qml:1361
-msgid "To: %1"
-msgstr "받는 사람: %1"
-
-#: contents/ui/KdeConnectPanel.qml:1368
-msgid "Name or number"
-msgstr "이름 또는 번호"
-
-#: contents/ui/KdeConnectPanel.qml:1368
-msgid "Phone number"
-msgstr "전화번호"
-
-#: contents/ui/KdeConnectPanel.qml:1450
-msgid "Message"
-msgstr "메시지"
-
-#: contents/ui/KdeConnectPanel.qml:1469 contents/ui/KdeConnectPanel.qml:1499
-#: contents/ui/MenuRepresentation.qml:4726
-#: contents/ui/MenuRepresentation.qml:5036
-#: contents/ui/MenuRepresentation.qml:5111
-msgid "Cancel"
-msgstr "취소"
-
-#: contents/ui/KdeConnectPanel.qml:1473 contents/ui/KdeConnectPanel.qml:1503
-msgid "Send"
-msgstr "보내기"
-
-#: contents/ui/KdeConnectPanel.qml:1491
-msgid "Web link or text to send"
-msgstr "웹 링크 또는 보낼 텍스트"
-
-#: contents/ui/KdeConnectPanel.qml:1679
-msgid "The phone is offline: check that it is on the same network."
-msgstr "휴대폰이 오프라인입니다: 같은 네트워크에 있는지 확인하세요."
-
-#: contents/ui/KdeConnectPanel.qml:1698
-msgid "Recent notifications"
-msgstr "최근 알림"
-
-#: contents/ui/KdeConnectPanel.qml:1786
-msgid "Reply"
-msgstr "답장"
-
-#: contents/ui/KdeConnectPanel.qml:1799
-msgid "Your reply"
-msgstr "답장 내용"
-
-#: contents/ui/KdeConnectPanel.qml:1819
-msgid "Dismiss notification"
-msgstr "알림 해제"
-
-#: contents/ui/KdeConnectPanel.qml:1870
-msgid "More options"
-msgstr "더 많은 옵션"
-
-#: contents/ui/KdeConnectPanel.qml:1904
-msgid "Open KDE Connect"
-msgstr "KDE Connect 열기"
-
-#: contents/ui/KdeConnectPanel.qml:1910
-msgid "KDE Connect settings"
-msgstr "KDE Connect 설정"
-
-#: contents/ui/KdeConnectPanel.qml:1915
-msgid "Hide this panel"
-msgstr "이 패널 숨기기"
-
-#: contents/ui/MenuRepresentation.qml:696
-msgid "Good morning"
-msgstr "좋은 아침"
-
-#: contents/ui/MenuRepresentation.qml:697
-msgid "Good afternoon"
-msgstr "좋은 오후"
-
-#: contents/ui/MenuRepresentation.qml:698
-msgid "Good evening"
-msgstr "좋은 저녁"
-
-#: contents/ui/MenuRepresentation.qml:735
-msgid "Folder"
-msgstr "폴더"
-
-#: contents/ui/MenuRepresentation.qml:1074
-#: contents/ui/MenuRepresentation.qml:1141
-msgid "%1 app"
-msgid_plural "%1 apps"
-msgstr[0] "%1개 앱"
-
-#: contents/ui/MenuRepresentation.qml:1378
-msgid "Sunday"
-msgstr "일요일"
-
-#: contents/ui/MenuRepresentation.qml:1378
-msgid "Monday"
-msgstr "월요일"
-
-#: contents/ui/MenuRepresentation.qml:1378
-msgid "Tuesday"
-msgstr "화요일"
-
-#: contents/ui/MenuRepresentation.qml:1379
-msgid "Wednesday"
-msgstr "수요일"
-
-#: contents/ui/MenuRepresentation.qml:1379
-msgid "Thursday"
-msgstr "목요일"
-
-#: contents/ui/MenuRepresentation.qml:1379
-msgid "Friday"
-msgstr "금요일"
-
-#: contents/ui/MenuRepresentation.qml:1379
-msgid "Saturday"
-msgstr "토요일"
-
-#: contents/ui/MenuRepresentation.qml:1382
-msgid "%1 night session"
-msgstr "%1 야간 세션"
-
-#: contents/ui/MenuRepresentation.qml:1383
-msgid "%1 morning picks"
-msgstr "%1 아침 추천"
-
-#: contents/ui/MenuRepresentation.qml:1384
-msgid "%1 afternoon picks"
-msgstr "%1 오후 추천"
-
-#: contents/ui/MenuRepresentation.qml:1385
-msgid "%1 evening picks"
-msgstr "%1 저녁 추천"
-
-#: contents/ui/MenuRepresentation.qml:1394
-msgid "Your top picks"
-msgstr "당신의 최고 추천"
-
-#: contents/ui/MenuRepresentation.qml:1395
-msgid "Frequently used"
-msgstr "자주 사용"
-
-#: contents/ui/MenuRepresentation.qml:1398
-msgid "Your morning session"
-msgstr "당신의 아침 세션"
-
-#: contents/ui/MenuRepresentation.qml:1399
-msgid "Good morning apps"
-msgstr "좋은 아침 앱"
-
-#: contents/ui/MenuRepresentation.qml:1400
-msgid "Midday picks"
-msgstr "정오 추천"
-
-#: contents/ui/MenuRepresentation.qml:1401
-msgid "Afternoon session"
-msgstr "오후 세션"
-
-#: contents/ui/MenuRepresentation.qml:1402
-msgid "Evening apps"
-msgstr "저녁 앱"
-
-#: contents/ui/MenuRepresentation.qml:1403
-msgid "Late night"
-msgstr "심야"
-
-#: contents/ui/MenuRepresentation.qml:1408
-msgid "Lock the screen"
-msgstr "화면 잠금"
-
-#: contents/ui/MenuRepresentation.qml:1409
-msgid "Suspend to RAM"
-msgstr "RAM으로 절전"
-
-#: contents/ui/MenuRepresentation.qml:1410
-msgid "Restart the computer"
-msgstr "컴퓨터 다시 시작"
-
-#: contents/ui/MenuRepresentation.qml:1411
-msgid "Shut down the computer"
-msgstr "컴퓨터 종료"
-
-#: contents/ui/MenuRepresentation.qml:1412
-msgid "Take a screenshot"
-msgstr "스크린샷 찍기"
-
-#: contents/ui/MenuRepresentation.qml:1413
-msgid "Open System Settings"
-msgstr "시스템 설정 열기"
-
-#: contents/ui/MenuRepresentation.qml:1414
-msgid "Open file manager"
-msgstr "파일 관리자 열기"
-
-#: contents/ui/MenuRepresentation.qml:1415
-msgid "Open a terminal"
-msgstr "터미널 열기"
-
-#: contents/ui/MenuRepresentation.qml:1416
-msgid "Log out"
-msgstr "로그아웃"
-
-#: contents/ui/MenuRepresentation.qml:1572
-msgid "today at %1"
-msgstr "오늘 %1"
-
-#: contents/ui/MenuRepresentation.qml:1573
-msgid "yesterday at %1"
-msgstr "어제 %1"
-
-#: contents/ui/MenuRepresentation.qml:1574
-msgid "%1 at %2"
-msgstr "%1 %2"
-
-#: contents/ui/MenuRepresentation.qml:1583
-msgid "Just now"
-msgstr "방금 전"
-
-#: contents/ui/MenuRepresentation.qml:1584
-msgid "%1 min ago"
-msgstr "%1분 전"
-
-#: contents/ui/MenuRepresentation.qml:1585
-msgid "%1 h ago"
-msgstr "%1시간 전"
-
-#: contents/ui/MenuRepresentation.qml:1835
-msgid "New application"
-msgstr "새 응용 프로그램"
-
-#: contents/ui/MenuRepresentation.qml:1836
-msgid "%1 is installed — filed under “%2”"
-msgstr "%1이(가) 설치되었습니다 — \"%2\" 폴더에 정리됨"
-
-#: contents/ui/MenuRepresentation.qml:1839
-msgid "%1 new application"
-msgid_plural "%1 new applications"
-msgstr[0] "%1개의 새 앱"
-
-#: contents/ui/MenuRepresentation.qml:2008
-msgid "Search for apps, settings and documents"
-msgstr "앱, 설정, 문서 검색"
-
-#: contents/ui/MenuRepresentation.qml:2401
-msgid "Screenshot"
-msgstr "스크린샷"
-
-#: contents/ui/MenuRepresentation.qml:2402
-msgid "Lock Screen"
-msgstr "화면 잠금"
-
-#: contents/ui/MenuRepresentation.qml:2403
-msgid "Open Terminal"
-msgstr "터미널 열기"
-
-#: contents/ui/MenuRepresentation.qml:2404
-msgid "Open Files"
-msgstr "파일 열기"
-
-#: contents/ui/MenuRepresentation.qml:2405
-msgid "Calculator"
-msgstr "계산기"
-
-#: contents/ui/MenuRepresentation.qml:2406
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "System"
+msgstr "시스템"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Utilities"
+msgstr "유틸리티"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Lost & Found"
+msgstr "Lost & Found"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Default Page:"
+msgstr "기본 페이지:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Power buttons:"
+msgstr "전원 버튼:"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Applications"
+msgstr "애플리케이션"
+
+#: ../contents/ui/config/ConfigSearch.qml ../contents/ui/Header.qml
 msgid "System Settings"
 msgstr "시스템 설정"
 
-#: contents/ui/MenuRepresentation.qml:2555
-msgid "Pinned"
-msgstr "고정됨"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "File Search"
+msgstr "파일 검색"
 
-#: contents/ui/MenuRepresentation.qml:2568
-msgid "Show more"
-msgstr "더 보기"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Locations (paths and URLs)"
+msgstr "위치(경로 및 URL)"
 
-#: contents/ui/MenuRepresentation.qml:2568
-msgid "Show less"
-msgstr "접기"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Places"
+msgstr "위치"
 
-#: contents/ui/MenuRepresentation.qml:2835
-#: contents/ui/MenuRepresentation.qml:3642
-msgid "Recommended"
-msgstr "추천"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Calculator"
+msgstr "계산기"
 
-#: contents/ui/MenuRepresentation.qml:2848
-msgid "Show all"
-msgstr "모두 표시"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Unit Converter"
+msgstr "단위 변환기"
 
-#: contents/ui/MenuRepresentation.qml:2919
-msgid "No recently accessed files yet"
-msgstr "최근에 사용한 파일이 아직 없습니다"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Date and Time"
+msgstr "날짜 및 시간"
 
-#: contents/ui/MenuRepresentation.qml:2987
-#: contents/ui/MenuRepresentation.qml:3161
-msgid "All"
-msgstr "전체"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Command Line"
+msgstr "명령줄"
 
-#: contents/ui/MenuRepresentation.qml:2996
-#: contents/ui/MenuRepresentation.qml:3769
-msgid "List"
-msgstr "목록"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Desktop Sessions"
+msgstr "데스크톱 세션"
 
-#: contents/ui/MenuRepresentation.qml:2996
-#: contents/ui/MenuRepresentation.qml:3768
-msgid "Grid"
-msgstr "그리드"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Power Management"
+msgstr "전원 관리"
 
-#: contents/ui/MenuRepresentation.qml:2996
-#: contents/ui/MenuRepresentation.qml:3767
-msgid "Categories"
-msgstr "범주"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Open Windows"
+msgstr "열린 창"
 
-#: contents/ui/MenuRepresentation.qml:2996
-msgid "View: %1"
-msgstr "보기: %1"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Bookmarks"
+msgstr "책갈피"
 
-#: contents/ui/MenuRepresentation.qml:3162
-#: contents/ui/MenuRepresentation.qml:3612
-msgid "Apps"
-msgstr "앱"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Browser History"
+msgstr "브라우저 기록"
 
-#: contents/ui/MenuRepresentation.qml:3163
-#: contents/ui/MenuRepresentation.qml:3612
-msgid "Files"
-msgstr "파일"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Web Search Keywords"
+msgstr "웹 검색 키워드"
 
-#: contents/ui/MenuRepresentation.qml:3165
-#: contents/ui/MenuRepresentation.qml:3612
-msgid "Actions"
-msgstr "작업"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Special Characters"
+msgstr "특수 문자"
 
-#: contents/ui/MenuRepresentation.qml:3342
-msgid "Enter or click to copy result"
-msgstr "Enter를 누르거나 클릭하여 결과를 복사하세요"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Dictionary"
+msgstr "사전"
 
-#: contents/ui/MenuRepresentation.qml:3366
-msgid "Type a command  ·  ↓ navigate  ·  /calc expr  ·  Enter run"
-msgstr "명령어 입력  ·  ↓ 탐색  ·  /calc 수식  ·  Enter로 실행"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Spell Checker"
+msgstr "맞춤법 검사기"
 
-#: contents/ui/MenuRepresentation.qml:3606
-msgid "Press Enter to run: %1"
-msgstr "Enter를 눌러 실행: %1"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Terminate Applications"
+msgstr "애플리케이션 종료"
 
-#: contents/ui/MenuRepresentation.qml:3607
-msgid "Type a shell command after '>'"
-msgstr "'>' 뒤에 셸 명령어를 입력하세요"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Software Center"
+msgstr "소프트웨어 센터"
 
-#: contents/ui/MenuRepresentation.qml:3610
-msgid "No results for \"%1\" in %2"
-msgstr "%2에서 \"%1\" 결과 없음"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Konsole Profiles"
+msgstr "Konsole 프로필"
 
-#: contents/ui/MenuRepresentation.qml:3614
-msgid "No results for \"%1\""
-msgstr "\"%1\" 결과 없음"
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Search with:"
+msgstr "검색 대상:"
 
-#: contents/ui/MenuRepresentation.qml:3652
-#: contents/ui/MenuRepresentation.qml:4166
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Only the plugins selected below"
+msgstr "아래에서 선택한 플러그인만"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Plugins that aren't installed are skipped."
+msgstr "설치되지 않은 플러그인은 건너뜁니다."
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Every plugin enabled in System Settings is used."
+msgstr "시스템 설정에서 활성화된 모든 플러그인이 사용됩니다."
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "No plugins selected, so every enabled plugin will be used."
+msgstr "선택된 플러그인이 없으므로 활성화된 모든 플러그인이 사용됩니다."
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Plugin settings:"
+msgstr "플러그인 설정:"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Configure Search Plugins…"
+msgstr "검색 플러그인 구성…"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Lists:"
+msgstr "목록:"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Compact list items"
+msgstr "간단한 목록 항목"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "All applications view:"
+msgstr "모든 애플리케이션 보기:"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "show items in grid"
+msgstr "항목을 그리드로 표시"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Show apps as:"
+msgstr "앱 표시 형식:"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Name only"
+msgstr "이름만"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Description only"
+msgstr "설명만"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Name (Description)"
+msgstr "이름(설명)"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Description (Name)"
+msgstr "설명(이름)"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Mark newly installed apps"
+msgstr "새로 설치된 앱 표시"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Grid icon size:"
+msgstr "그리드 아이콘 크기:"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Small"
+msgstr "작게"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Medium"
+msgstr "중간"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Large"
+msgstr "크게"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Huge"
+msgstr "아주 크게"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Number of columns in grid"
+msgstr "그리드 열 수"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Number of rows in grid"
+msgstr "그리드 행 수"
+
+#: ../contents/ui/Greeting.qml
+msgid "Hi, %1"
+msgstr "안녕하세요, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "Good morning, %1"
+msgstr "좋은 아침입니다, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "Good noon, %1"
+msgstr "좋은 점심입니다, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "Good afternoon, %1"
+msgstr "좋은 오후입니다, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "Good evening, %1"
+msgstr "좋은 저녁입니다, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "%1@%2"
+msgstr "%1@%2"
+
+#: ../contents/ui/Header.qml
+msgid "Leave"
+msgstr "나가기"
+
+#: ../contents/ui/main.qml
+msgid "Edit Applications…"
+msgstr "애플리케이션 편집…"
+
+#: ../contents/ui/main.qml ../contents/ui/CompactRepresentation.qml
+msgid "Start"
+msgstr "시작"
+
+#: ../contents/ui/MainView.qml
+msgid "Recent Apps"
+msgstr "최근 앱"
+
+#: ../contents/ui/MainView.qml
+msgid "Favorite Apps"
+msgstr "즐겨찾는 앱"
+
+#: ../contents/ui/MainView.qml
 msgid "Back"
 msgstr "뒤로"
 
-#: contents/ui/MenuRepresentation.qml:3699
-msgid "No recent documents this week"
-msgstr "이번 주 최근 문서 없음"
+#: ../contents/ui/MainView.qml
+msgid "All apps"
+msgstr "모든 앱"
 
-#: contents/ui/MenuRepresentation.qml:4562
-#: contents/ui/MenuRepresentation.qml:4936
-msgid "Drag apps here to add them"
-msgstr "앱을 여기로 드래그하여 추가하세요"
+#: ../contents/ui/NewAppBadge.qml
+msgctxt "@info:tooltip"
+msgid "Newly installed"
+msgstr "새로 설치됨"
 
-#: contents/ui/MenuRepresentation.qml:4612
-#: contents/ui/MenuRepresentation.qml:5008
-msgid "New folder"
-msgstr "새 폴더"
+#: ../contents/ui/RunnerList.qml
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "일치하는 항목 없음"
 
-#: contents/ui/MenuRepresentation.qml:4621
-#: contents/ui/MenuRepresentation.qml:5017
-msgid "Folder name"
-msgstr "폴더 이름"
+#: ../contents/ui/SearchBar.qml
+msgid "Search..."
+msgstr "검색…"
 
-#: contents/ui/MenuRepresentation.qml:4625
-msgid "Choose from pinned apps:"
-msgstr "고정된 앱에서 선택하세요:"
+#~ msgid "Use system font settings"
+#~ msgstr "시스템 글꼴 설정 사용"
 
-#: contents/ui/MenuRepresentation.qml:4731
-#: contents/ui/MenuRepresentation.qml:5041
-msgid "Create"
-msgstr "만들기"
+#~ msgid "Offset Screen Edge (0 is Default):"
+#~ msgstr "화면 가장자리 오프셋 (0은 기본값):"
 
-#: contents/ui/MenuRepresentation.qml:4758
-#: contents/ui/MenuRepresentation.qml:4965
-msgid "Delete folder"
-msgstr "폴더 삭제"
+#~ msgid "Offset Panel (0 is Default):"
+#~ msgstr "패널 오프셋 (0은 기본값):"
 
-#: contents/ui/MenuRepresentation.qml:4769
-msgid "Unpin all apps in folder"
-msgstr "폴더의 모든 앱 고정 해제"
+#~ msgid "Default"
+#~ msgstr "기본값"
 
-#: contents/ui/MenuRepresentation.qml:4951
-msgid "Rename folder"
-msgstr "폴더 이름 바꾸기"
+#~ msgid "Floating"
+#~ msgstr "부동"
 
-#: contents/ui/MenuRepresentation.qml:5025
-msgid "Drag apps from the list into this folder to add them."
-msgstr "목록에서 앱을 이 폴더로 드래그하여 추가하세요."
+#~ msgid "Indicator:"
+#~ msgstr "표시기:"
 
-#: contents/ui/MenuRepresentation.qml:5094
-msgid "Rename Folder"
-msgstr "폴더 이름 바꾸기"
+#~ msgid "Indicator Color:"
+#~ msgstr "표시기 색상:"
 
-#: contents/ui/MenuRepresentation.qml:5116
-msgid "Rename"
-msgstr "이름 바꾸기"
-
-#: contents/ui/MenuRepresentation.qml:5239
-msgid "Add apps — %1"
-msgstr "앱 추가 — %1"
-
-#: contents/ui/MenuRepresentation.qml:5240
-msgid "Add apps to folder"
-msgstr "폴더에 앱 추가"
-
-#: contents/ui/MenuRepresentation.qml:5250
-msgid "Filter…"
-msgstr "필터…"
-
-#: contents/ui/RecentDocDelegate.qml:63
-msgid "Home Folder"
-msgstr "홈 폴더"
-
-#: contents/ui/main.qml:343
-msgid "Edit Applications…"
-msgstr "응용 프로그램 편집…"
-
-#: contents/ui/code/tools.js:50
-msgid "Remove from Favorites"
-msgstr "즐겨찾기에서 제거"
-
-#: contents/ui/code/tools.js:54
-msgid "Add to Favorites"
-msgstr "즐겨찾기에 추가"
-
-#: contents/ui/code/tools.js:78
-msgid "On All Activities"
-msgstr "모든 활동에서"
-
-#: contents/ui/code/tools.js:128
-msgid "On the Current Activity"
-msgstr "현재 활동에서"
-
-#: contents/ui/code/tools.js:142
-msgid "Show in Favorites"
-msgstr "즐겨찾기에 표시"
+#~ msgid "Pinned applications Page:"
+#~ msgstr "고정된 애플리케이션 페이지:"

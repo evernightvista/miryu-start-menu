@@ -1,47 +1,55 @@
 {
-    "KPackageStructure": "Plasma/Applet",
-    "KPlugin": {
-        "Authors": [
-            {
-                "Name": "KairikiFedora",
-                "Email": "13278297951@sina.cn"
-            }
-        ],
-        "BugReportUrl": "https://github.com/evernightvista/miryu-start/issues",
-        "Category": "Application Launchers",
-        "Description": "Windows 11 style start menu with a KDE Connect mobile panel",
-        "Description[de]": "Startmenü im Windows-11-Stil mit einem KDE-Connect-Mobilpanel",
-        "Description[es]": "Menú de inicio al estilo Windows 11 con un panel móvil de KDE Connect",
-        "Description[fr]": "Menu Démarrer style Windows 11 avec un panneau mobile KDE Connect",
-        "Description[it]": "Menu Start in stile Windows 11 con pannello mobile KDE Connect",
-        "Description[ja]": "Windows 11 スタイルのスタートメニュー + KDE Connect モバイルパネル",
-        "Description[nl]": "Windows 11-stijl startmenu met een KDE Connect mobiel paneel",
-        "Description[pl]": "Menu Start w stylu Windows 11 z mobilnym panelem KDE Connect",
-        "Description[pt]": "Menu Iniciar no estilo Windows 11 com um painel móvel do KDE Connect",
-        "Description[ru]": "Меню «Пуск» в стиле Windows 11 с мобильной панелью KDE Connect",
-        "Description[tr]": "Windows 11 stili başlat menüsü ve KDE Connect mobil paneli",
-        "Description[zh]": "Windows 11 风格的开始菜单 + KDE Connect 移动面板",
-        "EnabledByDefault": true,
-        "Icon": "start-here-kde",
-        "Id": "org.miryugaming.start",
-        "License": "GPL-3.0+",
-        "Name": "Miryu Start",
-        "Version": "45.0.0",
-        "Website": "https://github.com/evernightvista/miryu-start",
-        "Name[de]": "Miryu Start",
-        "Name[es]": "Miryu Inicio",
-        "Name[fr]": "Miryu Démarrer",
-        "Name[it]": "Miryu Avvio",
-        "Name[ja]": "Miryu スタート",
-        "Name[nl]": "Miryu Start",
-        "Name[pl]": "Miryu Start",
-        "Name[pt]": "Miryu Iniciar",
-        "Name[ru]": "Miryu Пуск",
-        "Name[tr]": "Miryu Başlat",
-        "Name[zh]": "Miryu 开始"
-    },
-    "X-Plasma-API-Minimum-Version": "6.0",
-    "X-Plasma-Provides": [
-        "org.kde.plasma.launchermenu"
-    ]
+	"KPackageStructure": "Plasma/Applet",
+	"KPlugin": {
+		"Authors": [
+			{
+				"Email": "13278297951@sina.cn",
+				"Name": "KairikiFedora"
+			}
+		],
+		"Category": "Application Launchers",
+		"Description": "One stop KDE Plasma 6 Start Menu",
+		"Description[cs]": "Kompletní nabídka Start pro KDE Plasma 6",
+		"Description[de]": "All-in-One-Startmenü für KDE Plasma 6",
+		"Description[el]": "Ολοκληρωμένο μενού έναρξης για το KDE Plasma 6",
+		"Description[es]": "Menú de inicio todo en uno para KDE Plasma 6",
+		"Description[fi]": "Yhden luukun käynnistysvalikko KDE Plasma 6:lle",
+		"Description[fr]": "Menu de démarrage tout-en-un pour KDE Plasma 6",
+		"Description[id]": "Menu mulai serba ada untuk KDE Plasma 6",
+		"Description[it_IT]": "Menu di avvio tutto-in-uno per KDE Plasma 6",
+		"Description[ja]": "KDE Plasma 6 向けオールインワン スタートメニュー",
+		"Description[ko]": "KDE Plasma 6용 올인원 시작 메뉴",
+		"Description[nl]": "Alles-in-één startmenu voor KDE Plasma 6",
+		"Description[pl]": "Wszystko w jednym – menu Start dla KDE Plasma 6",
+		"Description[pt_BR]": "Menu iniciar tudo-em-um para o KDE Plasma 6",
+		"Description[pt_PT]": "Menu iniciar tudo-em-um para o KDE Plasma 6",
+		"Description[zh_CN]": "一站式的KDE Plasma 6 开始菜单",
+		"Description[zh_TW]": "一站式的KDE Plasma 6 開始功能表",
+		"EnabledByDefault": true,
+		"Icon": "start-here-kde",
+		"Id": "org.miryugaming.startmenu",
+		"Name": "Miryu Start Menu",
+		"Name[cs]": "Nabídka Start Miryu",
+		"Name[de]": "Miryu Startmenü",
+		"Name[el]": "Miryu Μενού Έναρξης",
+		"Name[es]": "Menú de inicio Miryu",
+		"Name[fi]": "Miryu-käynnistysvalikko",
+		"Name[fr]": "Menu de démarrage Miryu",
+		"Name[id]": "Menu Mulai Miryu",
+		"Name[it_IT]": "Menu di avvio Miryu",
+		"Name[ja]": "Miryu スタートメニュー",
+		"Name[ko]": "Miryu 시작 메뉴",
+		"Name[nl]": "Miryu Startmenu",
+		"Name[pl]": "Menu Start Miryu",
+		"Name[pt_BR]": "Menu Iniciar Miryu",
+		"Name[pt_PT]": "Menu Iniciar Miryu",
+		"Name[zh_CN]": "Miryu 开始菜单",
+		"Name[zh_TW]": "Miryu 開始功能表",
+		"Version": "45.0.1",
+		"Website": "https://github.com/evernightvista/miryu-start"
+	},
+	"X-Plasma-API-Minimum-Version": "6.0",
+	"X-Plasma-Provides": [
+		"org.kde.plasma.launchermenu"
+	]
 }

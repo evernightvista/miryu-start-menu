@@ -6,171 +6,105 @@
   <kcfgfile name=""/>
 
   <group name="General">
-
-    <entry name="appsIconSize" type="Enum">
-      <label></label>
-      <default>2</default>
-    </entry>
-    <entry name="docsIconSize" type="Enum">
-      <label></label>
-      <default>2</default>
-    </entry>
     <entry name="icon" type="String">
-      <default>start-here</default>
+      <label>The name of the icon to use for the compact representation (e.g. on a small panel).</label>
+      <default>start-here-kde-symbolic</default>
     </entry>
     <entry name="useCustomButtonImage" type="Bool">
+      <label>Whether to use a custom image instead of an icon in the compact representation (e.g. on a small panel).</label>
       <default>false</default>
     </entry>
     <entry name="customButtonImage" type="Url">
+      <label>The URL of the custom image to use instead of an icon in the compact representation (e.g. on a small panel).</label>
       <default></default>
     </entry>
-
-    <entry name="showFilterList" type="Bool">
+    <entry name="enableGreeting" type="Bool">
+      <label>Enable the greeting.</label>
       <default>true</default>
     </entry>
-
-    <entry name="appNameFormat" type="Int">
+    <entry name="pinnedModel" type="Int">
+      <label>Main page: 0 favorites, 1 recent apps, 2 recent files</label>
       <default>0</default>
     </entry>
-    <entry name="limitDepth" type="Bool">
+    <entry name="defaultPage" type="Int">
+      <label>Default Page</label>
+      <default>0</default>
+    </entry>
+    <entry name="categoryNames" type="StringList" hidden="true">
+      <label>Names of the All Apps pages, written by the launcher for the Default Page setting.</label>
+      <default></default>
+    </entry>
+    <entry name="customGreeting" type="String">
+      <label>Custom greeting Text</label>
+      <default></default>
+    </entry>
+    <entry name="launcherPosition" type="Int">
+      <label>Where the launcher opens: 0 follow the launcher button (default), 1 horizontal center, 2 screen center, 3 panel edge.</label>
+      <default>0</default>
+    </entry>
+    <entry name="offsetX" type="Int" hidden="true">
+      <label>Deprecated: the launcher does not float away from the panel any more. Only kept so old configurations still load.</label>
+      <default>0</default>
+    </entry>
+    <entry name="offsetY" type="Int" hidden="true">
+      <label>Deprecated: the launcher does not float away from the panel any more. Only kept so old configurations still load.</label>
+      <default>0</default>
+    </entry>
+    <entry name="enableGlow" type="Bool">
+      <label>Gives the launcher elements some glow.</label>
       <default>false</default>
     </entry>
-
-    <entry name="numberColumns" type="Int">
-    <default>6</default>
+    <entry name="glowColor" type="Int">
+      <label>Color of the glow: 0 purple, 1 blue, 2 red, 3 customGlowColor</label>
+      <default>0</default>
     </entry>
-
-    <entry name="numberRows" type="Int">
-    <default>4</default>
+    <entry name="customGlowColor" type="Color">
+      <label>Glow color used when glowColor is 3 (custom).</label>
+      <default>#D300DC</default>
     </entry>
-
-    <!-- Favoris écrits par les scripts de disposition (org.kde.plasma.desktop-layout.js)
-         via kickoff.writeConfig("favorites", ...). Lus en priorité au premier
-         démarrage d'un nouvel utilisateur, avant le repli sur favoriteApps. -->
-    <entry name="favorites" type="StringList">
-      <label>List of favorites defined by the Plasma global theme layout script.</label>
-      <default></default>
+    <entry name="compactListItems" type="Bool">
+      <label>Show list items in a compact format</label>
+      <default>false</default>
     </entry>
-    <entry name="favoriteApps" type="StringList">
-      <default>preferred://browser,kontact.desktop,systemsettings.desktop,org.kde.dolphin.desktop,ktp-contactlist.desktop,org.kde.kate.desktop</default>
+    <entry name="showItemsInGrid" type="Bool">
+      <label>Show list items in a compact format</label>
+      <default>false</default>
     </entry>
-    <entry name="favoriteSystemActions" type="StringList">
-         <label>List of system action favorites.</label>
-         <default>logout,reboot,shutdown</default>
-    </entry>
-    <entry name="hiddenApplications" type="StringList">
-      <default></default>
-    </entry>
-
     <entry name="useExtraRunners" type="Bool">
-      <default>true</default>
-    </entry>
-    <entry name="labels2lines" type="Bool">
-      <default>true</default>
+      <label>Whether search uses only the KRunner plugins in extraRunners, instead of every plugin enabled in System Settings.</label>
+      <default>false</default>
     </entry>
     <entry name="extraRunners" type="StringList">
-      <default>bookmarks,baloosearch</default>
+      <label>The plugin ids of the KRunner plugins to search with. Only used if useExtraRunners is true.</label>
+      <default>krunner_services,krunner_systemsettings,krunner_recentdocuments,baloosearch,locations,calculator,unitconverter,krunner_shell</default>
     </entry>
-    <entry name="alignResultsToBottom" type="Bool">
-      <default>true</default>
-    </entry>
-    <entry name="switchCategoriesOnHover" type="Bool">
-      <label>Whether to switch between menu categories by hovering them.</label>
-      <default>true</default>
-    </entry>
-
-    <entry name="removeApplicationCommand" type="String">
-      <default>muon-discover --application</default>
-    </entry>
-    <entry name="showAtCenter" type="Bool">
-       <default>true</default>
-   </entry>   
-    <entry name="favoritesPortedToKAstats" type="Bool">
-      <label>Are the favorites ported to use KActivitiesStats to allow per-activity favorites</label>
-      <default>false</default>
-    </entry>
-
-    <entry name="viewUser" type="Bool">
-    <default>true</default>
-    </entry>
-
-    <entry name="allAppsViewMode" type="Int">
+    <entry name="appNameFormat" type="Int">
+      <label>How app names are shown: 0 name, 1 generic name, 2 name (generic name), 3 generic name (name).</label>
       <default>0</default>
     </entry>
-
-    <entry name="allAppsSortMode" type="Int">
-      <default>0</default>
-    </entry>
-
-    <entry name="showRecentDocs" type="Bool">
-      <default>true</default>
-    </entry>
-
-    <entry name="showRecentApps" type="Bool">
+    <entry name="highlightNewlyInstalledApps" type="Bool">
+      <label>Mark apps that were installed recently and not opened yet.</label>
       <default>false</default>
     </entry>
-
-    <entry name="enableShellRunner" type="Bool">
-      <default>true</default>
-    </entry>
-
-    <entry name="showSleepButton" type="Bool">
-      <default>true</default>
-    </entry>
-    <entry name="showRestartButton" type="Bool">
-      <default>true</default>
-    </entry>
-    <entry name="showShutdownButton" type="Bool">
-      <default>true</default>
-    </entry>
-
-    <entry name="pinnedFolders" type="String">
+    <entry name="systemFavorites" type="StringList">
+      <label>Favorite ids of the system actions (lock-screen, logout, switch-user, suspend, hibernate, reboot, shutdown, save-session) shown as buttons next to the power menu.</label>
       <default></default>
     </entry>
-
-    <!-- Shared order of pinned entries (apps and folder tiles). Keys are
-         "a:<favoriteId>" for apps and "f:<folder identity>" for folders. -->
-    <entry name="pinnedOrder" type="String">
-      <default></default>
-    </entry>
-
-    <entry name="showQuickActions" type="Bool">
+    <entry name="useSystemFontSettings" type="Bool" hidden="true">
+      <label>DEPRECATED: system font is now always used; kept only so old config files keep loading.</label>
       <default>false</default>
     </entry>
-
-    <entry name="appLaunchCounts" type="String">
-      <default></default>
+    <entry name="appsIconSize" type="Enum">
+      <label>Favorites apps icon size</label>
+      <default>2</default>
     </entry>
-
-    <entry name="allAppsFolders" type="String">
-      <default></default>
+    <entry name="numberColumns" type="Int">
+      <label>Number of columns to favorites apps grid</label>
+      <default>6</default>
     </entry>
-
-    <entry name="knownApps" type="String">
-      <default></default>
-    </entry>
-
-    <entry name="newApps" type="String">
-      <default></default>
-    </entry>
-
-    <entry name="notifyNewApps" type="Bool">
-      <default>true</default>
-    </entry>
-
-    <!-- Fenestra : volet KDE Connect actif (bouton interrupteur) -->
-    <entry name="kdeConnectPanelOn" type="Bool">
-      <default>false</default>
-    </entry>
-
-    <!-- Fenestra : option du volet : garder le volet ouvert d'une ouverture du menu à l'autre -->
-    <entry name="kdeConnectMemoriser" type="Bool">
-      <default>false</default>
-    </entry>
-
-    <!-- Fenestra : affiche le bouton KDE Connect à droite de la recherche -->
-    <entry name="kdeConnectShow" type="Bool">
-      <default>true</default>
+     <entry name="numberOfRows" type="Int">
+      <label>Number of rows to favorites apps grid</label>
+      <default>3</default>
     </entry>
   </group>
 </kcfg>

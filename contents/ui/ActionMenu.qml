@@ -1,84 +1,78 @@
 /*
- * Miryu Start — https://github.com/evernightvista/miryu-start
- * Modified by naykkalak (2026) for Miryu Start, a fork of Menu 11 Next by Eisteed.
- * The original notice below is kept. This file is GPL-2.0-or-later;
- * Miryu Start as a whole is distributed under GPL-3.0-or-later.
- */
-/*
     SPDX-FileCopyrightText: 2013 Aurélien Gâteau <agateau@kde.org>
     SPDX-FileCopyrightText: 2014-2015 Eike Hein <hein@kde.org>
 
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-import QtQuick 2.15
+pragma ComponentBehavior: Bound
 
-import org.kde.plasma.extras 2.0 as PlasmaExtras
+import QtQuick
+import org.kde.plasma.extras as PlasmaExtras
 
 Item {
     id: root
 
-    property QtObject menu
+    property PlasmaExtras.Menu menu
     property Item visualParent
-    property variant actionList
-    property bool opened: menu ? (menu.status !== PlasmaExtras.Menu.Closed) : false
+    property var actionList
+    readonly property bool opened: root.menu ? root.menu.status !== PlasmaExtras.Menu.Closed : false
 
-    signal actionClicked(string actionId, variant actionArgument)
+    signal actionClicked(actionId: string, actionArgument: var)
     signal closed
 
-    onActionListChanged: refreshMenu();
-
-    onOpenedChanged: {
-        if (!opened) {
-            closed();
+    function open(x: real, y: real): void {
+        if (!root.actionList) {
+            return;
         }
+        root.menu.open(x, y);
     }
 
-    function open(x, y) {
-        if (!actionList) {
+    function refreshMenu(): void {
+        if (root.menu) {
+            root.menu.destroy();
+        }
+
+        if (!root.actionList) {
             return;
         }
 
-        if (x && y) {
-            menu.open(x, y);
-        } else {
-            menu.open();
-        }
+        root.menu = contextMenuComponent.createObject(root) as PlasmaExtras.Menu;
+
+        root.fillMenu(root.menu, root.actionList);
     }
 
-    function refreshMenu() {
-        if (menu) {
-            menu.destroy();
-        }
-
-        if (!actionList) {
-            return;
-        }
-
-        menu = contextMenuComponent.createObject(root);
-
-        fillMenu(menu, actionList);
-    }
-
-    function fillMenu(menu, items) {
-        items.forEach(function(actionItem) {
+    function fillMenu(menu: PlasmaExtras.Menu, items: var): void {
+        items.forEach(actionItem => {
             if (actionItem.subActions) {
                 // This is a menu
-                var submenuItem = contextSubmenuItemComponent.createObject(
-                                          menu, { "actionItem" : actionItem });
-
-                fillMenu(submenuItem.submenu, actionItem.subActions);
-
+                const submenuItem = contextSubmenuItemComponent.createObject(menu, { "actionItem": actionItem }) as SubmenuItem;
+                root.fillMenu(submenuItem.submenu, actionItem.subActions);
             } else {
-                var item = contextMenuItemComponent.createObject(
-                                menu,
-                                {
-                                    "actionItem": actionItem,
-                                }
-                );
+                contextMenuItemComponent.createObject(menu, { "actionItem": actionItem });
             }
         });
+    }
 
+    onActionListChanged: root.refreshMenu()
+
+    onOpenedChanged: {
+        if (!root.opened) {
+            root.closed();
+        }
+    }
+
+    component SubmenuItem: PlasmaExtras.MenuItem {
+        id: submenuItem
+
+        property var actionItem
+
+        property PlasmaExtras.Menu submenu: PlasmaExtras.Menu {
+            visualParent: submenuItem.action
+        }
+
+        text: submenuItem.actionItem.text ? submenuItem.actionItem.text : ""
+        icon: submenuItem.actionItem.icon ? submenuItem.actionItem.icon : null
     }
 
     Component {
@@ -92,37 +86,26 @@ Item {
     Component {
         id: contextSubmenuItemComponent
 
-        PlasmaExtras.MenuItem {
-            id: submenuItem
-
-            property variant actionItem
-
-            text: actionItem.text ? actionItem.text : ""
-            icon: actionItem.icon ? actionItem.icon : null
-
-            property PlasmaExtras.Menu submenu: PlasmaExtras.Menu {
-                visualParent: submenuItem.action
-            }
-        }
+        SubmenuItem {}
     }
 
     Component {
         id: contextMenuItemComponent
 
         PlasmaExtras.MenuItem {
-            property variant actionItem
+            id: menuItem
 
-            text      : actionItem.text ? actionItem.text : ""
-            enabled   : actionItem.type !== "title" && ("enabled" in actionItem ? actionItem.enabled : true)
-            separator : actionItem.type === "separator"
-            section   : actionItem.type === "title"
-            icon      : actionItem.icon ? actionItem.icon : null
-            checkable : actionItem.checkable ? actionItem.checkable : false
-            checked   : actionItem.checked ? actionItem.checked : false
+            property var actionItem
 
-            onClicked: {
-                root.actionClicked(actionItem.actionId, actionItem.actionArgument);
-            }
+            text: menuItem.actionItem.text ? menuItem.actionItem.text : ""
+            enabled: menuItem.actionItem.type !== "title" && ("enabled" in menuItem.actionItem ? menuItem.actionItem.enabled : true)
+            separator: menuItem.actionItem.type === "separator"
+            section: menuItem.actionItem.type === "title"
+            icon: menuItem.actionItem.icon ? menuItem.actionItem.icon : null
+            checkable: menuItem.actionItem.checkable ? menuItem.actionItem.checkable : false
+            checked: menuItem.actionItem.checked ? menuItem.actionItem.checked : false
+
+            onClicked: root.actionClicked(menuItem.actionItem.actionId, menuItem.actionItem.actionArgument)
         }
     }
 }

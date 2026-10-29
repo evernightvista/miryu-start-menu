@@ -1,0 +1,539 @@
+# Translation of Miryu Start Menu in id
+# Copyright (C) 2022
+# This file is distributed under the same license as the MMcK Launcher package.
+# Adam Adrian <4.adam.adrian@gmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: org.miryugaming.startmenu 45.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/AxiomOperator/XLauncher\n"
+"POT-Creation-Date: 2026-10-30 07:36+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Adam Adrian <4.adam.adrian@gmail.com>\n"
+"Language-Team: Indonesia <>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../metadata.json
+msgid "Miryu Start Menu"
+msgstr "Menu Mulai Miryu"
+
+#: ../metadata.json
+msgid "One stop KDE Plasma 6 Start Menu"
+msgstr "Menu mulai serba ada untuk KDE Plasma 6"
+
+#: ../contents/code/tools.js
+msgid "Remove from Favorites"
+msgstr "Hapus dari Favorit"
+
+#: ../contents/code/tools.js ../contents/ui/MainView.qml
+msgid "Add to Favorites"
+msgstr "Tambahkan ke Favorit"
+
+#: ../contents/code/tools.js
+msgid "On All Activities"
+msgstr "Di Semua Aktivitas"
+
+#: ../contents/code/tools.js
+msgid "On the Current Activity"
+msgstr "Di Aktivitas Saat Ini"
+
+#: ../contents/code/tools.js
+msgid "Show in Favorites"
+msgstr "Tampilkan di Favorit"
+
+#: ../contents/config/config.qml
+msgid "General"
+msgstr "Umum"
+
+#: ../contents/config/config.qml
+msgid "Lists and grids"
+msgstr "Daftar dan kisi"
+
+#: ../contents/config/config.qml
+msgid "Search"
+msgstr "Cari"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Lock"
+msgstr "Kunci"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Switch User"
+msgstr "Ganti Pengguna"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Log Out"
+msgstr "Keluar"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Sleep"
+msgstr "Tidur"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Hibernate"
+msgstr "Hibernasi"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Restart"
+msgstr "Mulai Ulang"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Shut Down"
+msgstr "Matikan"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Save Session"
+msgstr "Simpan Sesi"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Icon:"
+msgstr "Ikon:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "Pilih…"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Clear Icon"
+msgstr "Hapus Ikon"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Greeting:"
+msgstr "Sapaan:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Enabled"
+msgstr "Diaktifkan"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Custom Greeting Text:"
+msgstr "Teks Sapaan Kustom:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "No custom greeting set"
+msgstr "Tidak ada spaan kustom yang diatur"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Glow"
+msgstr "Pendar"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Glow color:"
+msgstr "Warna pendar:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Purple (Default)"
+msgstr "Ungu (Bawaan)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Blue"
+msgstr "Biru"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Red"
+msgstr "Merah"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Custom"
+msgstr "Kustom"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Custom glow color:"
+msgstr "Warna pendar khusus:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Please choose a color"
+msgstr "Silahkan pilih sebuah warna"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Launcher Positioning:"
+msgstr "Pemosisian Peluncur:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Follow Launcher Button (Default)"
+msgstr "Ikuti tombol peluncur (bawaan)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Horizontal Center"
+msgstr "Tengah Horizontal"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Screen Center"
+msgstr "Di Tengah Layar"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Panel Edge"
+msgstr "Tepi panel"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Main page:"
+msgstr "Halaman utama:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Favorites (Default)"
+msgstr "Favorit (Bawaan)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Recent Applications"
+msgstr "Aplikasi Terbaru"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+#: ../contents/ui/config/ConfigSearch.qml ../contents/ui/MainView.qml
+msgid "Recent Files"
+msgstr "Berkas Terbaru"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "All Applications (Default)"
+msgstr "Semua Aplikasi (Default)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Development"
+msgstr "Pengembangan"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Games"
+msgstr "Permainan"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Graphics"
+msgstr "Grafis"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Internet"
+msgstr "Intenet"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Multimedia"
+msgstr "Multimedia"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Office"
+msgstr "Kantor"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Science & Math"
+msgstr "Sains & Matematika"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Settings"
+msgstr "Pengaturan"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "System"
+msgstr "Sistem"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Utilities"
+msgstr "Alat"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Lost & Found"
+msgstr "Hilang & Ditemukan"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Default Page:"
+msgstr "Halaman Bawaan"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Power buttons:"
+msgstr "Tombol daya:"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Applications"
+msgstr "Aplikasi"
+
+#: ../contents/ui/config/ConfigSearch.qml ../contents/ui/Header.qml
+msgid "System Settings"
+msgstr "Pengaturan Sistem"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "File Search"
+msgstr "Pencarian Berkas"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Locations (paths and URLs)"
+msgstr "Lokasi (jalur dan URL)"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Places"
+msgstr "Tempat"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Calculator"
+msgstr "Kalkulator"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Unit Converter"
+msgstr "Konverter Satuan"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Date and Time"
+msgstr "Tanggal dan Waktu"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Command Line"
+msgstr "Baris Perintah"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Desktop Sessions"
+msgstr "Sesi Desktop"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Power Management"
+msgstr "Manajemen Daya"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Open Windows"
+msgstr "Jendela Terbuka"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Bookmarks"
+msgstr "Markah"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Browser History"
+msgstr "Riwayat Peramban"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Web Search Keywords"
+msgstr "Kata Kunci Pencarian Web"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Special Characters"
+msgstr "Karakter Khusus"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Dictionary"
+msgstr "Kamus"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Spell Checker"
+msgstr "Pemeriksa Ejaan"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Terminate Applications"
+msgstr "Hentikan Aplikasi"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Software Center"
+msgstr "Pusat Perangkat Lunak"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Konsole Profiles"
+msgstr "Profil Konsole"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Search with:"
+msgstr "Cari dengan:"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Only the plugins selected below"
+msgstr "Hanya plugin yang dipilih di bawah"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Plugins that aren't installed are skipped."
+msgstr "Plugin yang tidak terpasang akan dilewati."
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Every plugin enabled in System Settings is used."
+msgstr "Semua plugin yang diaktifkan di Pengaturan Sistem akan digunakan."
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "No plugins selected, so every enabled plugin will be used."
+msgstr ""
+"Tidak ada plugin yang dipilih, jadi semua plugin yang aktif akan digunakan."
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Plugin settings:"
+msgstr "Pengaturan plugin:"
+
+#: ../contents/ui/config/ConfigSearch.qml
+msgid "Configure Search Plugins…"
+msgstr "Konfigurasi Plugin Pencarian…"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Lists:"
+msgstr "Daftar:"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Compact list items"
+msgstr "Item daftar ringkas"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "All applications view:"
+msgstr "Tampilan semua aplikasi:"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "show items in grid"
+msgstr "tampilkan item dalam kisi"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Show apps as:"
+msgstr "Tampilkan aplikasi sebagai:"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Name only"
+msgstr "Hanya nama"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Description only"
+msgstr "Hanya deskripsi"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Name (Description)"
+msgstr "Nama (Deskripsi)"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Description (Name)"
+msgstr "Deskripsi (Nama)"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Mark newly installed apps"
+msgstr "Tandai aplikasi yang baru dipasang"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Grid icon size:"
+msgstr "Ukuran ikon kisi:"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Small"
+msgstr "Kecil"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Medium"
+msgstr "Sedang"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Large"
+msgstr "Besar"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Huge"
+msgstr "Sangat besar"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Number of columns in grid"
+msgstr "Jumlah kolom dalam kisi"
+
+#: ../contents/ui/config/ListAndGrid.qml
+msgid "Number of rows in grid"
+msgstr "Jumlah baris dalam kisi"
+
+#: ../contents/ui/Greeting.qml
+msgid "Hi, %1"
+msgstr "Hai, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "Good morning, %1"
+msgstr "Selamat pagi, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "Good noon, %1"
+msgstr "Selamat siang, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "Good afternoon, %1"
+msgstr "Selamat sore, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "Good evening, %1"
+msgstr "Selamat malam, %1"
+
+#: ../contents/ui/Greeting.qml
+msgid "%1@%2"
+msgstr "%1@%2"
+
+#: ../contents/ui/Header.qml
+msgid "Leave"
+msgstr "Keluar"
+
+#: ../contents/ui/main.qml
+msgid "Edit Applications…"
+msgstr "Sunting Aplikasi…"
+
+#: ../contents/ui/main.qml ../contents/ui/CompactRepresentation.qml
+msgid "Start"
+msgstr "Mulai"
+
+#: ../contents/ui/MainView.qml
+msgid "Recent Apps"
+msgstr "Aplikasi Terbaru"
+
+#: ../contents/ui/MainView.qml
+msgid "Favorite Apps"
+msgstr "Aplikasi Favorit"
+
+#: ../contents/ui/MainView.qml
+msgid "Back"
+msgstr "Kembali"
+
+#: ../contents/ui/MainView.qml
+msgid "All apps"
+msgstr "Semua aplikasi"
+
+#: ../contents/ui/NewAppBadge.qml
+msgctxt "@info:tooltip"
+msgid "Newly installed"
+msgstr "Baru dipasang"
+
+#: ../contents/ui/RunnerList.qml
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "Tidak ada hasil"
+
+#: ../contents/ui/SearchBar.qml
+msgid "Search..."
+msgstr "Cari..."
+
+#~ msgid "Use system font settings"
+#~ msgstr "Gunakan pengaturan font sistem"
+
+#~ msgid "Offset Screen Edge (0 is Default):"
+#~ msgstr "Offset Tepian Layar (0 = Default)"
+
+#~ msgid "Offset Panel (0 is Default):"
+#~ msgstr "Offset Panel (0 = Default)"
+
+#~ msgid "Default"
+#~ msgstr "Default"
+
+#~ msgid "Floating"
+#~ msgstr "Mengambang"
+
+#~ msgid "Indicator:"
+#~ msgstr "Indkator:"
+
+#~ msgid "Indicator Color:"
+#~ msgstr "Warna Indikator"
+
+#~ msgid "Power Off"
+#~ msgstr "Matikan Daya"
+
+#~ msgid "All"
+#~ msgstr "Semua"
+
+#~ msgid "Search:"
+#~ msgstr "Cari:"
+
+#~ msgid "Expand search to bookmarks, files and emails"
+#~ msgstr "Luaskan pencaarian ke bookmark, file dan email"
+
+#~ msgid "Theming:"
+#~ msgstr "Tema:"
+
+#~ msgid "Dark (Default)"
+#~ msgstr "Gelap (Default)"
+
+#~ msgid "Light"
+#~ msgstr "Terang"
+
+#~ msgid "Matching"
+#~ msgstr "Cocokkan Tema"
+
+#~ msgid "Search your computer"
+#~ msgstr "Cari di komputermu"

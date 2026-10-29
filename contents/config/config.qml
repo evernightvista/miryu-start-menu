@@ -1,9 +1,3 @@
-/*
- * Miryu Start — https://github.com/evernightvista/miryu-start
- * Modified by naykkalak (2026) for Miryu Start, a fork of Menu 11 Next by Eisteed.
- * The original notice below is kept. This file is GPL-2.0-or-later;
- * Miryu Start as a whole is distributed under GPL-3.0-or-later.
- */
 /***************************************************************************
  *   Copyright (C) 2014 by Eike Hein <hein@kde.org>                        *
  *                                                                         *
@@ -23,14 +17,24 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
  ***************************************************************************/
 
-import QtQuick 2.0
+import QtQuick
 
-import org.kde.plasma.configuration 2.0
+import org.kde.plasma.configuration
 
 ConfigModel {
     ConfigCategory {
          name: i18n("General")
-         icon: "kde"
-         source: "ConfigGeneral.qml"
+         icon: "preferences-desktop-plasma"
+         source: "config/ConfigGeneral.qml"
+    }
+    ConfigCategory {
+        name: i18n("Lists and grids")
+        icon: "view-list-details"
+        source: "config/ListAndGrid.qml"
+    }
+    ConfigCategory {
+        name: i18n("Search")
+        icon: "search"
+        source: "config/ConfigSearch.qml"
     }
 }
