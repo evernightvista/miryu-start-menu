@@ -9,6 +9,16 @@ Item {
 
     required property LauncherState launcher
 
+    // Fallback avatar used when the account has no face icon set (e.g. a brand
+    // new user). The miryu icon theme ships cs-user-accounts.svg; we reference
+    // it directly by path so it shows regardless of the active icon theme.
+    readonly property string fallbackAvatar: "file:///usr/share/icons/miryu/scalable/apps/cs-user-accounts.svg"
+
+    // KUser.faceIconUrl is a QUrl: an *empty* QUrl is still an object, so a
+    // plain `url || fallback` check may not fall back. Compare the string form.
+    readonly property bool hasFaceIcon: avatar.launcher.user.faceIconUrl
+                                         && avatar.launcher.user.faceIconUrl.toString().length > 0
+
     readonly property color borderGradientColor1: {
         switch (Plasmoid.configuration.glowColor) {
         case 0: return "#FEAC5E";
@@ -47,6 +57,11 @@ Item {
         onStatusChanged: {
             if (status === Image.Ready) {
                 mainFaceIcon.source = preloader.source;
+            } else if (status === Image.Error) {
+                // The configured face icon could not be loaded (missing file,
+                // broken AccountsService entry, ...): fall back to the default
+                // cs-user-accounts avatar instead of leaving a blank circle.
+                mainFaceIcon.source = avatar.fallbackAvatar;
             }
         }
     }
@@ -58,7 +73,7 @@ Item {
             fill: parent
             margins: Kirigami.Units.smallSpacing
         }
-        source: avatar.launcher.user.faceIconUrl
+        source: avatar.hasFaceIcon ? avatar.launcher.user.faceIconUrl : avatar.fallbackAvatar
 
         onClicked: {
             KCM.KCMLauncher.openSystemSettings("kcm_users");
@@ -75,12 +90,11 @@ Item {
     property int avatarLoadToken: 0
 
     function reloadAvatar(): void {
-        const url = avatar.launcher.user.faceIconUrl;
-        if (!url) {
-            mainFaceIcon.source = "";
+        if (!avatar.hasFaceIcon) {
+            mainFaceIcon.source = avatar.fallbackAvatar;
             return;
         }
-        preloader.source = url + "?v=" + (++avatar.avatarLoadToken);
+        preloader.source = avatar.launcher.user.faceIconUrl + "?v=" + (++avatar.avatarLoadToken);
     }
 
     // The underlying face-icon file changed (e.g. the user saved a new avatar in

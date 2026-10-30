@@ -428,7 +428,7 @@ msgstr "你好，%1"
 
 #: ../contents/ui/Greeting.qml
 msgid "Good morning, %1"
-msgstr "早上好，%1"
+msgstr "上午好，%1"
 
 #: ../contents/ui/Greeting.qml
 msgid "Good noon, %1"

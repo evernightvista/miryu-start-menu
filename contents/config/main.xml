@@ -90,6 +90,21 @@
       <label>Favorite ids of the system actions (lock-screen, logout, switch-user, suspend, hibernate, reboot, shutdown, save-session) shown as buttons next to the power menu.</label>
       <default></default>
     </entry>
+    <!-- Written by the Plasma global theme layout script
+         (org.kde.plasma.desktop-layout.js) via launcher.writeConfig("favorites", ...).
+         Read first when a new user logs in, before falling back to favoriteApps. -->
+    <entry name="favorites" type="StringList">
+      <label>List of favorites defined by the Plasma global theme layout script.</label>
+      <default></default>
+    </entry>
+    <entry name="favoriteApps" type="StringList">
+      <label>Default favorite app ids used when the global theme does not define any.</label>
+      <default>preferred://browser,org.kde.dolphin.desktop,systemsettings.desktop,org.kde.kate.desktop</default>
+    </entry>
+    <entry name="favoritesPortedToKAstats" type="Bool">
+      <label>Whether the config-based favorites have been ported to KActivities stats already.</label>
+      <default>false</default>
+    </entry>
     <entry name="useSystemFontSettings" type="Bool" hidden="true">
       <label>DEPRECATED: system font is now always used; kept only so old config files keep loading.</label>
       <default>false</default>

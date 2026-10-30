@@ -10,6 +10,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.ksvg as KSvg
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.plasma.plasmoid
+import org.kde.plasma.plasma5support as P5Support
 import org.kde.plasma.private.kicker as Kicker
 
 // Models, metrics and settings shared by every part of the launcher.
@@ -100,6 +101,37 @@ Item {
         launcher.menuOpen = !launcher.menuOpen;
     }
 
+    // --- Favorites from the Plasma global theme ------------------------------
+    // New users get their favorites from the global theme's layout script
+    // (org.kde.plasma.desktop-layout.js), which calls
+    //   launcher.writeConfig("favorites", [ ... ])
+    // (or kickoff.writeConfig when it only targets the default kickoff). We read
+    // that key first, then fall back to the bundled defaults and, finally, to
+    // parsing the layout JS file of the currently applied look-and-feel theme.
+
+    // Extract the last writeConfig("favorites", [ ... ]) list from a layout
+    // script (the last occurrence wins, matching writeConfig's overwrite).
+    function parseLayoutFavorites(text) {
+        const re = /writeConfig\(\s*["']favorites["']\s*,\s*\[([^\]]*)\]/g;
+        let match;
+        let result = [];
+        while ((match = re.exec(text)) !== null) {
+            result = match[1].split(",")
+                .map(item => item.trim().replace(/^["']+|["']+$/g, ""))
+                .filter(item => item.length > 0);
+        }
+        return result;
+    }
+
+    // Import a list of favorite ids into the KActivities-stats favorites model,
+    // but only when it is still empty (never overwrite user-set favorites).
+    function portFavorites(favorites) {
+        const fm = rootModelObject.favoritesModel;
+        if (favorites && favorites.length > 0 && fm.count < 1) {
+            fm.portOldFavorites(favorites);
+        }
+    }
+
     // Lets the config page list the real All Apps pages (rows 0-1 are the recents models)
     function publishCategoryNames(): void {
         const model = launcher.rootModel;
@@ -140,7 +172,28 @@ Item {
         highlightNewlyInstalledApps: Plasmoid.configuration.highlightNewlyInstalledApps
 
         // Favorites are persisted by KActivities stats, keyed by this client id
-        Component.onCompleted: rootModelObject.favoritesModel.initForClient("org.kde.plasma.kicker.favorites.instance-" + Plasmoid.id)
+        Component.onCompleted: {
+            rootModelObject.favoritesModel.initForClient("org.kde.plasma.kicker.favorites.instance-" + Plasmoid.id)
+
+            if (!Plasmoid.configuration.favoritesPortedToKAstats) {
+                if (rootModelObject.favoritesModel.count < 1) {
+                    const cfgFavorites = Plasmoid.configuration.favorites;
+                    if (cfgFavorites && cfgFavorites.length > 0) {
+                        // Written directly to this launcher's config by the
+                        // global theme layout script (launcher.writeConfig).
+                        rootModelObject.favoritesModel.portOldFavorites(cfgFavorites);
+                    } else {
+                        // The layout script did not write "favorites" to this
+                        // launcher's config. Read the look-and-feel theme's
+                        // layout JS directly (it may have targeted
+                        // org.kde.plasma.kickoff). The model is still empty,
+                        // so portFavorites() will accept whatever we find.
+                        launcher.layoutFavoritesLoader.requestLayoutFavorites();
+                    }
+                }
+                Plasmoid.configuration.favoritesPortedToKAstats = true;
+            }
+        }
 
         onRefreshed: {
             launcher.reset();
@@ -160,6 +213,108 @@ Item {
 
     Kicker.ProcessRunner {
         id: processRunnerObject
+    }
+
+    // Reads the currently applied look-and-feel theme's desktop layout JS and
+    // extracts the last kickoff/launcher.writeConfig("favorites", [ ... ]) list.
+    // Used only as a fallback when the layout script did not write the key to
+    // this launcher's config directly (i.e. it targeted org.kde.plasma.kickoff).
+    P5Support.DataSource {
+        id: layoutFavoritesLoader
+
+        engine: "executable"
+        property bool requestPending: false
+
+        // The "executable" engine runs the source through sh -c, so shell
+        // constructs ($(), &&, ...) work. We locate the layout JS of the
+        // active look-and-feel theme (user override first, then system) and
+        // print it; the caller parses the favorites out of it.
+        readonly property string layoutCmd: {
+            const themeLookup =
+                "THEME=$(kreadconfig6 --file kdeglobals --group KDE --key LookAndFeelPackage 2>/dev/null);" +
+                "[ -z \"$THEME\" ] && THEME=org.kde.breeze.desktop;";
+            const searchPaths =
+                "\"$HOME/.local/share/plasma/look-and-feel/$THEME\" " +
+                "\"/usr/share/plasma/look-and-feel/$THEME\" " +
+                "\"/usr/share/plasma/look-and-feel/org.kde.breeze.desktop\"";
+            return themeLookup +
+                "for d in " + searchPaths + "; do " +
+                "f=\"$d/contents/layouts/org.kde.plasma.desktop-layout.js\";" +
+                "if [ -f \"$f\" ]; then cat \"$f\"; exit 0; fi; " +
+                "done; exit 1";
+        }
+
+        function requestLayoutFavorites() {
+            if (requestPending) {
+                return;
+            }
+            requestPending = true;
+            favoritesDefaultsFallback.start();
+            connectSource(layoutCmd);
+        }
+
+        onNewData: (source, data) => {
+            disconnectSource(source);
+            requestPending = false;
+            // The config key wins if it was written after we started.
+            const cfgFavorites = Plasmoid.configuration.favorites;
+            if (cfgFavorites && cfgFavorites.length > 0) {
+                launcher.portFavorites(cfgFavorites);
+                return;
+            }
+            const favorites = launcher.parseLayoutFavorites(String(data[source] || ""));
+            if (favorites.length > 0) {
+                launcher.portFavorites(favorites);
+            } else {
+                // No favorites in the global theme: fall back to bundled
+                // defaults so the grid is never empty on a fresh profile.
+                launcher.portFavorites(Plasmoid.configuration.favoriteApps);
+            }
+        }
+    }
+
+    // Safety net: if the layout lookup never returns (e.g. kreadconfig6
+    // missing), apply the bundled defaults after a short delay.
+    Timer {
+        id: favoritesDefaultsFallback
+        interval: 1500
+        running: false
+        repeat: false
+        onTriggered: {
+            if (rootModelObject.favoritesModel.count < 1) {
+                launcher.portFavorites(Plasmoid.configuration.favoriteApps);
+            }
+        }
+    }
+
+    // Keep the favorites model and the config in sync in both directions.
+    Connections {
+        target: launcher.globalFavorites
+
+        function onFavoritesChanged() {
+            if (Plasmoid.configuration && launcher.globalFavorites) {
+                Plasmoid.configuration.favoriteApps = launcher.globalFavorites.favorites;
+            }
+        }
+    }
+
+    Connections {
+        target: Plasmoid.configuration
+
+        function onFavoritesChanged() {
+            // The global theme layout script wrote "favorites" at runtime: apply
+            // it to the live favorites model (only when it is still empty).
+            const favorites = Plasmoid.configuration.favorites;
+            if (favorites && favorites.length > 0) {
+                launcher.portFavorites(favorites);
+            }
+        }
+
+        function onFavoriteAppsChanged() {
+            if (launcher.globalFavorites) {
+                launcher.globalFavorites.favorites = Plasmoid.configuration.favoriteApps;
+            }
+        }
     }
 
     KCoreAddons.KUser {
